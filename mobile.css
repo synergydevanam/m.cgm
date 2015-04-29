@@ -1,0 +1,218 @@
+﻿
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	text-align:center;
+}	
+#nav{
+	width:100%;
+	background:#434343;
+	color:white;
+	padding:5px;
+	
+}
+#nav ul{
+	list-style-type: none;
+}
+#nav ul li{
+	display:inline;
+}
+#nav a{
+	color:#434343;
+	font-size:9pt;
+	font-weight:bold;
+	background:white;
+	border:1px solid white;
+	border-radius:5px;
+	padding:2px;
+	padding-left:10px;
+	padding-right:10px;
+	text-decoration:none;
+}
+	#banner{ 
+		width:100%;
+		padding:20px 0;
+	}
+#banner img{
+	margin:0px auto;
+	width:60%!important;
+	height:auto;
+}
+	#content{
+		padding:10px 20px 20px 20px;
+	}	
+		#content .icon{ 
+			height:80px;
+			width:80px;
+		}
+		#content p{ 
+			color:#888; 
+			font:300 17px Georgia, serif;
+			margin:0 0 15px 0; 
+			line-height:140%;
+		}
+		#content a{ 
+			color:#444;
+			border-bottom:1px dotted #888; 
+			text-decoration:none;
+		}
+		
+			#content a.full-site{
+				height:28px; 
+				font:500 9.5pt "helvetica neue", Helvetica, Arial, sans-serif; 
+				text-transform: uppercase; 
+				text-decoration:none; 
+				letter-spacing:0.1em; 
+				background:url('button-link.png') no-repeat right top; 
+				border:none;
+				color:#2a87b2; 
+				padding:7px 33px 6px 0;
+			}
+		
+		ul{
+			margin:0 0 0 0;
+		}
+			ul li{
+				color:#666;
+				font:400 14px "helvetica neue", Helvetica, Arial, sans-serif; 
+				text-transform: uppercase; 
+				text-decoration:none; 
+				letter-spacing:0.1em;
+				list-style:none;
+				margin:0 0 5px 0;
+				padding:10px;
+			}
+			ul li.odd{ 
+				background:#f5f5f5;
+			}
+		#contacthome{
+			background:#434343;
+			padding:20px;
+            color:white;
+		}
+.leftNav{
+	float:left;
+	margin-left:10pt;
+}
+.rightNav{
+	float:right;
+	margin-right:10pt;
+}
+
+#loginBox input{
+	height:20px;
+	padding:5px;
+	border-radius:5px;
+	border:3px solid #A19F9F;
+	text-align:center;
+	margin-bottom:10px;
+	width:80%;
+}
+
+.btnLogin {
+	width:100%;
+	height:50px!important;
+	background:#A19F9F;
+	color:black;
+	font-weight:bold;
+    font-size:18pt;
+}
+#TblDashBoard {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#TblDashBoard td, #TblDashBoard th {
+    font-size: 1em;
+    border: 1px solid #43C0FB;
+    padding: 3px 7px 2px 7px;
+}
+
+#TblDashBoard th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #43C0FB;
+    color: #ffffff;
+}
+
+#TblDashBoard tr.alt td {
+    color: #000000;
+    background-color: #EAF2D3;
+}
+
+.res{
+	width:100%;
+	height:100%;
+	background:none repeat scroll 0% 0% rgb(67, 192, 251);
+	position:absolute;
+	top:0;
+	z-index:100;
+	left:0;
+	display:none;
+}
+
+.btnRes{
+	float:left;
+	width:70px;
+	height:70px;
+	margin-right:10px;
+}
+
+.btnRes img{
+	width:70px;
+	height:70px;
+}
+.tblOfButtons{
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:100pt;
+}
+
+img{
+    max-width:100%;
+}
+
+.navDashBoard{
+    margin-bottom:10
+}
+
+.AddListDropDown{
+    width:82%;
+    height:35px;
+    margin-bottom:10px;
+}
+
+.CalenderDatePicker{
+    margin-left:auto;
+    margin-right:auto;
+    width:81%;
+}
+
+.DropDownDateOfBirth{
+    height:35px;
+    margin-bottom:10px;
+    margin-left:10px;
+    width:25.5%;
+}
+
+.txtArea{
+    height:50px;
+    width:80%;
+    padding:5px;
+	border-radius:5px;
+	border:3px solid #A19F9F;
+	text-align:center;
+	margin-bottom:10px;
+}
+
+.tblReg
+{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
