@@ -72,14 +72,20 @@ public partial class AdminResidentDisplay : System.Web.UI.Page
 
     private void showResidentGrid()
     {
-        string searchString = "Where " + (ddlStatus.SelectedValue == "All" ? "" : "AL_Resident.ExtraField10='"+ddlStatus.SelectedValue+"' and") + " AL_Resident.ExtraField1 in ('0" + (getLogin().ExtraField3 == "" ? "" : "','" + getLogin().ExtraField3.Replace(",", "','")) + "')";
+        string searchString = "Where 1=1 and " + (ddlStatus.SelectedValue == "All" ? "" : "AL_Resident.ExtraField10='" + ddlStatus.SelectedValue + "' and") + " AL_Resident.ExtraField1 in ('0" + (getLogin().ExtraField3 == "" ? "" : "','" + getLogin().ExtraField3.Replace(",", "','")) + "')";
 
         if (Request.QueryString["SearchKey"] != null && hfHasSearchDone.Value=="0")
         {
             hfHasSearchDone.Value = "1";
             searchString += " and AL_Resident.Address  like '%" + Request.QueryString["SearchKey"] + "%' or  AL_Resident.Name like '%" + Request.QueryString["SearchKey"] + "%' ";
         }
-        searchString += " order by AL_Resident.Name ";
+
+        if (ddlPropertyID.SelectedIndex != 0)
+        {
+            searchString += " And AL_Resident.ExtraField1 = " + ddlPropertyID.SelectedValue;
+        }
+
+        searchString += "and  AL_Resident.Name<>''  order by AL_Resident.Name ";
 
         string sql = @"SELECT distinct AL_Resident.ResidentID,AL_Resident.Name FROM AL_Resident
     inner join AL_Property on AL_Resident.ExtraField1 = AL_Property.PropertyID 
@@ -144,22 +150,7 @@ public partial class AdminResidentDisplay : System.Web.UI.Page
     }
     protected void ddlPropertyID_SelectedIndexChanged(object sender, EventArgs e)
     {
-        string searchString = "Where 1=1 " + (ddlStatus.SelectedValue == "All" ? "" : "and AL_Resident.ExtraField10='" + ddlStatus.SelectedValue + "'");
-
-        if (ddlPropertyID.SelectedIndex!=0)
-        {
-            searchString += " And AL_Resident.ExtraField1 = " + ddlPropertyID.SelectedValue;
-        }
-        searchString += " order by AL_Property.PropertyID, AL_Resident.Name";
-
-        List<Resident> searchResult = new List<Resident>();
-        searchResult = ResidentManager.SearchResidents(searchString);
-
-        lblCount.Text = " (" + searchResult.Count.ToString() + ") ";
-        LinkPermissionChecking(searchResult);
-        gvResident.DataSource = searchResult;
-        gvResident.DataBind();
-        LoadGridColor();
+        showResidentGrid();
     }
 
     private void LoadGridColor()
