@@ -21,8 +21,8 @@
 	
 	<div id = "nav">
         <ul>
-		<li><a class="leftNav" href = "addresident.aspx">Res.t</a></li>
-		<li><a href = "#">Pro.</a></li>
+		<li><a class="leftNav" href = "AdminResidentDisplay.aspx">Res.</a></li>
+		<li><a class="leftNav" href = "#">Pro.</a></li>
 		<li><a   class="rightNav"  id="A1" href="../LoginPage.aspx?logout=1" runat="server">L.Out</a></li>
 	    </ul>
         <div style="clear:both" ></div>
