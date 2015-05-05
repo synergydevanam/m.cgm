@@ -65,7 +65,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
         else
         {
             Session["PreviousPage"] = HttpContext.Current.Request.Url.AbsoluteUri;
-            Response.Redirect("../m_LoginPage.aspx");
+            Response.Redirect("../LoginPage.aspx");
         }
     }
 

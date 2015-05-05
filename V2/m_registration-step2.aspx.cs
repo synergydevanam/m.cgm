@@ -24,6 +24,6 @@ public partial class Default2 : System.Web.UI.Page
                 where [LoginID]="+Request.QueryString["LoginID"];
 
         CommonManager.SQLExec(sql);
-        Response.Redirect("m_Loginpage.aspx");
+        Response.Redirect("LoginPage.aspx");
     }
 }
