@@ -10,24 +10,25 @@
         <ContentTemplate>
             <asp:HiddenField ID="hfHasSearchDone" Value="0" runat="server" />
             <div class="single_colom">
-                <div style="padding: 20px;">
+                <div>
                     <table width="100%">
                         <tr>
                             <td>
                                 <p>
                                     Resident Search<asp:Label ID="lblCount" runat="server" Text=""></asp:Label></p>
                             </td>
-                            <td style="float: left; padding-left: 20px;">
-                                <p>
-                                    Property:
+                            </tr><tr>
+                            <td>
+                                
                                     <asp:DropDownList ID="ddlPropertyID" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlPropertyID_SelectedIndexChanged">
                                     </asp:DropDownList>
+                                    <br />
                                     Status<asp:DropDownList ID="ddlStatus" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlPropertyID_SelectedIndexChanged">
                                         <asp:ListItem Value="All">All</asp:ListItem>
                                         <asp:ListItem Value="Active" Selected="True">Active</asp:ListItem>
                                         <asp:ListItem Value="InActive">InActive</asp:ListItem>
                                     </asp:DropDownList>
-                                </p>
+                                
                             </td>
                         </tr>
                     </table>

@@ -16,7 +16,7 @@
 <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
 	<div id="banner">
-		<a href = "Default.aspx"><img src="../images/logo.png" alt="Progressive Equities" style = "width:100%;"/></a>
+		<a href = "../Default.aspx"><img src="../images/logo.png" alt="Progressive Equities" style = "width:100%;"/></a>
 	</div>
 	
 	<div id = "nav">
