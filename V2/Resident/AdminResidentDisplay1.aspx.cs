@@ -86,37 +86,9 @@ public partial class AdminResidentDisplay : System.Web.UI.Page
 
         lblCount.Text = " ("+searchResult.Count.ToString()+") ";
         LinkPermissionChecking(searchResult);
-        //gvResident.DataSource = searchResult;
-        //gvResident.DataBind();
-        //LoadGridColor();
-
-        string html="<div id='dashboard'>";
-        string html1 = "<table  id='TblDashBoard'><tr><td>Resident Name</td><td>Task</td></tr>";
-        string html2="";
-        foreach (Resident item in searchResult)
-        {
-            html1 += "<tr>";
-
-            html1 += "<td><a href='#'>" + item.Name + @"</a></td>";
-            html1 += "<td><a href=\"javascript:ShowDiv('res"+item.ResidentID+"', 'TblDashBoard')\">Task</a></td>";
-
-            html1 += "</tr>";
-
-            html2 += @"<div class='res' id='res"+item.ResidentID+ @"'>
-			<table class='tblOfButtons'>
-			<tr><td><div class='btnRes'><a href ='ADLRecord.aspx?ResidentID="+item.ResidentID+@"'>ADL Record</a></div></td></tr>
-			<tr><td><div class='btnRes'><a href ='AssessmentnCare.aspx?ResidentID=" + item.ResidentID + @"'>Comprehensive Assessment</a></div></td></tr>
-			<tr><td><div class='btnRes'><a href ='ServiceCarePlanAssessment.aspx?ResidentID=" + item.ResidentID + @"'>Service Care & Assessment</a></div></td></tr>
-			<tr><td><div class='btnRes'><a href ='Medicaiton_MonthlyMedicaionAdministrationRecord.aspx?residentID=" + item.ResidentID + @"'>Medicaiton</a></div></td></tr>
-			<tr><td><div class='btnRes'><a href ='ObservationNote.aspx?residentID=" + item.ResidentID + @"'>Observation Log</a></div></td></tr>
-			<tr><td><div class='btnRes'><a href ='DoctorsOrder.aspx?residentID=" + item.ResidentID + @"'>Doctor's Order</a></div></td></tr>
-
-			</table>
-			</div>";
-
-        }
-
-        lblPrint.Text = html + html2+ html1 +"</table></div>";
+        gvResident.DataSource = searchResult;
+        gvResident.DataBind();
+        LoadGridColor();
     }
 
     private void LinkPermissionChecking(List<Resident> searchResult)

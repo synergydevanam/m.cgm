@@ -1,11 +1,48 @@
-<%@ Page Language="C#" MasterPageFile="~/Login/m_AdminMaster.master" AutoEventWireup="true"
-    CodeFile="AdminResidentDisplay.aspx.cs" Inherits="AdminResidentDisplay" Title="Display Resident By Admin" %>
+<%@ Page Language="C#" MasterPageFile="~/WithoutLeftMenu.master" AutoEventWireup="true"
+    CodeFile="AdminResidentDisplay1.aspx.cs" Inherits="AdminResidentDisplay" Title="Display Resident By Admin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-     <title>Dashboard | Care Giver Max Mobile</title>
-    <script src="../js/mobile.js"></script>
+    <style type="text/css">
+        .gridCss
+        {
+            width: 100%;
+            padding: 20px 10px 10px 10px;
+            text-align: center;
+        }
+        .col_detail
+        {
+            display: none;
+        }
+        .col_detail li
+        {
+            padding-bottom: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        function expandDetailsInGrid(_this) {
+            var id = _this.id;
+            var imgelem = document.getElementById(_this.id);
+            var currowid = id.replace("A_View", "TR_Summmary") //GETTING THE ID OF SUMMARY ROW
+
+            var rowdetelemid = currowid;
+            var rowdetelem = document.getElementById(rowdetelemid);
+            if (imgelem.alt == "plus") {
+                imgelem.src = "../App_Themes/Default/images/minus.gif"
+                imgelem.alt = "minus"
+                rowdetelem.style.display = 'block';
+            }
+            else {
+                imgelem.src = "../App_Themes/Default/images/plus.gif"
+                imgelem.alt = "plus"
+                rowdetelem.style.display = 'none';
+            }
+
+            return false;
+
+        }
+    </script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentHome" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <asp:HiddenField ID="hfHasSearchDone" Value="0" runat="server" />
@@ -31,8 +68,7 @@
                             </td>
                         </tr>
                     </table>
-                    <asp:Label ID="lblPrint" runat="server" Text=""></asp:Label>
-                    <asp:GridView ID="gvResident" runat="server" AutoGenerateColumns="false" HeaderStyle-CssClass="grid_head_css" Visible="false"
+                    <asp:GridView ID="gvResident" runat="server" AutoGenerateColumns="false" HeaderStyle-CssClass="grid_head_css"
                         CssClass="grid gridResidentDisplay">
                         <HeaderStyle BackColor="#DFEAF5" />
                         <Columns>

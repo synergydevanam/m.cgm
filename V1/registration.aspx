@@ -12,8 +12,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentHome" runat="server">
     <div id="loginBox">
 			<form runat="server">
-                
-				<input runat="server" id="firstname" name="firstname" type = "text" placeholder="First Name"/><br/>
+        <asp:TextBox ID="TextBox1" runat="server" placeholder="First Name" name="firstname" ></asp:TextBox>
+                <input runat="server" id="firstname" name="firstname" type = "text" placeholder="First Name"/><br/>
                 <input runat="server" id="lastname" name="lastname" type = "text" placeholder="Last Name"/><br/>
                 <input runat="server" id="initial" name="initial" type = "text" placeholder="Initial"/><br/>
                 <input runat="server" id="primaryphone" name="primaryphone" type = "text" placeholder="Primary Phone"/><br/>
