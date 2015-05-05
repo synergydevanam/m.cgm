@@ -104,12 +104,14 @@ public partial class AdminResidentDisplay : System.Web.UI.Page
 
             html2 += @"<div class='res' id='res"+item.ResidentID+ @"'>
 			<table class='tblOfButtons'>
-			<tr><td><div class='btnRes'><a href ='ADLRecord.aspx?ResidentID="+item.ResidentID+@"'>ADL Record</a></div></td></tr>
+			<tr><td><div class='btnRes'><a href ='AdminResidentDisplay.aspx'>Back</a></div></td></tr>
+			<tr><td><div class='btnRes'><a href ='ADLRecord.aspx?ResidentID=" + item.ResidentID + @"'>ADL Record</a></div></td></tr>
 			<tr><td><div class='btnRes'><a href ='AssessmentnCare.aspx?ResidentID=" + item.ResidentID + @"'>Comprehensive Assessment</a></div></td></tr>
 			<tr><td><div class='btnRes'><a href ='ServiceCarePlanAssessment.aspx?ResidentID=" + item.ResidentID + @"'>Service Care & Assessment</a></div></td></tr>
 			<tr><td><div class='btnRes'><a href ='Medicaiton_MonthlyMedicaionAdministrationRecord.aspx?residentID=" + item.ResidentID + @"'>Medicaiton</a></div></td></tr>
 			<tr><td><div class='btnRes'><a href ='ObservationNote.aspx?residentID=" + item.ResidentID + @"'>Observation Log</a></div></td></tr>
 			<tr><td><div class='btnRes'><a href ='DoctorsOrder.aspx?residentID=" + item.ResidentID + @"'>Doctor's Order</a></div></td></tr>
+			<tr><td><div class='btnRes'><a href ='AdminResidentDisplay.aspx'>Back</a></div></td></tr>
 
 			</table>
 			</div>";
