@@ -12,7 +12,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentHome" runat="server">
     <div id="loginBox">
 			<form runat="server" action="dashboard.aspx">
-                
+            <asp:TextBox ID="TextBox1" runat="server" placeholder="Username"></asp:TextBox>
 				<input runat="server" id="username" name="username" type = "text" placeholder="Username"/><br/>
 				<input runat="server" id="password" name="password" type = "password" placeholder="Password"/><br/>
 				<input runat="server" name="submit" class="btnLogin" type = "submit" value="Login" enableviewstate="false"/>
