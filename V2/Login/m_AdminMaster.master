@@ -21,9 +21,9 @@
 	
 	<div id = "nav">
         <ul>
-		<li><a class="leftNav" href = "addresident.aspx">Resident</a></li>
-		<li><a href = "#">Property</a></li>
-		<li><a   class="rightNav"  id="A1" href="../LoginPage.aspx?logout=1" runat="server">logout</a></li>
+		<li><a class="leftNav" href = "addresident.aspx">Res.t</a></li>
+		<li><a href = "#">Pro.</a></li>
+		<li><a   class="rightNav"  id="A1" href="../LoginPage.aspx?logout=1" runat="server">L.Out</a></li>
 	    </ul>
         <div style="clear:both" ></div>
 	</div>
