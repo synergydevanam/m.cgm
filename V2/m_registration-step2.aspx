@@ -12,7 +12,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentNav" runat="Server">
     <ul>
         <li><a class="leftNav" href="registration.aspx">Back</a></li>
-        <li><a class="rightNav" href="login.aspx">Login</a></li>
+        <li><a class="rightNav" href="loginPage.aspx">Login</a></li>
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentHome" runat="Server">

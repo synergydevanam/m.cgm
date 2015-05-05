@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Default2 : System.Web.UI.Page
+public partial class LoginPage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -139,8 +139,7 @@ public partial class Default2 : System.Web.UI.Page
             myCookie.Expires = DateTime.Now.AddDays(-1d);
             Response.Cookies.Add(myCookie);
         }
-        // string str = Request.Url.ToString();
+       // string str = Request.Url.ToString();
         Response.Redirect("LoginPage.aspx");
     }
-    
 }
