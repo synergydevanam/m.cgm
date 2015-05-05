@@ -79,9 +79,9 @@ public partial class AdminResidentDisplay : System.Web.UI.Page
             hfHasSearchDone.Value = "1";
             searchString += " and AL_Resident.Address  like '%" + Request.QueryString["SearchKey"] + "%' or  AL_Resident.Name like '%" + Request.QueryString["SearchKey"] + "%' ";
         }
-        searchString += " order by AL_Property.PropertyID, AL_Resident.Name";
+        searchString += " order by AL_Resident.Name ";
 
-        string sql = @"SELECT distinct AL_Resident.ResidentID,AL_Resident.ResidentID,AL_Resident.Name FROM AL_Resident
+        string sql = @"SELECT distinct AL_Resident.ResidentID,AL_Resident.Name FROM AL_Resident
     inner join AL_Property on AL_Resident.ExtraField1 = AL_Property.PropertyID 
 " +searchString;
 
