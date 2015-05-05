@@ -111,8 +111,7 @@ public partial class AdminResidentDisplay : System.Web.UI.Page
 			<tr><td><div class='btnRes'><a href ='Medicaiton_MonthlyMedicaionAdministrationRecord.aspx?residentID=" + item.ResidentID + @"'>Medicaiton</a></div></td></tr>
 			<tr><td><div class='btnRes'><a href ='ObservationNote.aspx?residentID=" + item.ResidentID + @"'>Observation Log</a></div></td></tr>
 			<tr><td><div class='btnRes'><a href ='DoctorsOrder.aspx?residentID=" + item.ResidentID + @"'>Doctor's Order</a></div></td></tr>
-			<tr><td><div class='btnRes'><a href ='AdminResidentDisplay.aspx'>Back</a></div></td></tr>
-
+			"+"<tr><td><div class='btnRes'><a href =\"javascript:back('res"+item.ResidentID+"', 'TblDashBoard')\">Back</a></div></td></tr>"+@"
 			</table>
 			</div>";
 
