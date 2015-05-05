@@ -100,7 +100,7 @@ public partial class AdminResidentDisplay : System.Web.UI.Page
         //LoadGridColor();
 
         string html="<div id='dashboard'>";
-        string html1 = "<table  id='TblDashBoard'><tr><td>Resident Name</td><td>Task</td></tr>";
+        string html1 = "<table  id='TblDashBoard'><tr style='font-weight:bold;'><td>Resident Name</td><td>Task</td></tr>";
         string html2="";
         foreach (DataRow dr in ds.Tables[0].Rows)
         {
