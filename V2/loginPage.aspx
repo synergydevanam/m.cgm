@@ -14,7 +14,7 @@
         
                 <asp:TextBox ID="txtLoginName" runat="server" placeholder="Username"></asp:TextBox>
                 <asp:TextBox ID="txtPassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-        <asp:CheckBox ID="chkRememberme" runat="server" Checked="true"/>
+        <asp:CheckBox ID="chkRememberme" runat="server" Checked="true" Visible="false"/>
                 <asp:Button ID="btnLogin" runat="server" Text="Login"  class="btnLogin" 
                     onclick="btnLogin_OnClick"/>
                     <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
