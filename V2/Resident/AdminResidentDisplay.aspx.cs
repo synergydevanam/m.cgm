@@ -100,7 +100,7 @@ public partial class AdminResidentDisplay : System.Web.UI.Page
         //LoadGridColor();
 
         string html="<div id='dashboard'>";
-        string html1 = "<table  id='TblDashBoard'><tr style='font-weight:bold;'><td>Resident Name</td><td>Task</td></tr>";
+        string html1 = "<table  id='TblDashBoard' cellpadding='10'><tr style='font-weight:bold;'><td>Resident Name</td><td>Task</td></tr>";
         string html2="";
         foreach (DataRow dr in ds.Tables[0].Rows)
         {
@@ -112,7 +112,7 @@ public partial class AdminResidentDisplay : System.Web.UI.Page
             html1 += "</tr>";
 
             html2 += @"<div class='res' id='res"+dr["ResidentID"].ToString()+ @"'>
-			<table class='tblOfButtons'>
+			<table class='tblOfButtons'  cellpadding='10'>
 			" + "<tr><td><div class='btnRes'><a href =\"javascript:back('res" + dr["ResidentID"].ToString() + "', 'TblDashBoard')\"><< Back</a></div></td></tr>" + @"
             <tr><td><div class='btnRes'><a href ='ADLRecord.aspx?ResidentID=" + dr["ResidentID"].ToString() + @"'>ADL Record</a></div></td></tr>
 			<tr><td><div class='btnRes'><a href ='AssessmentnCare.aspx?ResidentID=" + dr["ResidentID"].ToString() + @"'>Comprehensive Assessment</a></div></td></tr>
