@@ -11,7 +11,7 @@
             <asp:HiddenField ID="hfHasSearchDone" Value="0" runat="server" />
             <div class="single_colom">
                 <div>
-                    <table width="100%">
+                    <table width="100%" >
                         <tr>
                             <td>
                                 <p>
