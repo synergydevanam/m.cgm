@@ -1,5 +1,5 @@
 <%@ Page Language="C#" MasterPageFile="~/Login/m_AdminMaster.master" AutoEventWireup="true" 
-CodeFile="AdminResidentInsertUpdate.aspx.cs" Inherits="AdminResidentInsertUpdate" Title="Resident Insert/Update By Admin" %>
+CodeFile="AdminResidentInsertUpdate_PC.aspx.cs" Inherits="AdminResidentInsertUpdate" Title="Resident Insert/Update By Admin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style type="text/css">

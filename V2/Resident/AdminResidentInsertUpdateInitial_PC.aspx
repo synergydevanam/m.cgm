@@ -1,5 +1,5 @@
-<%@ Page Language="C#" MasterPageFile="~/Login/m_AdminMaster.master" AutoEventWireup="true" 
-CodeFile="AdminResidentInsertUpdate.aspx.cs" Inherits="AdminResidentInsertUpdate" Title="Resident Insert/Update By Admin" %>
+<%@ Page Language="C#" MasterPageFile="~/WithoutLeftMenu.master" AutoEventWireup="true" 
+CodeFile="AdminResidentInsertUpdateInitial_PC.aspx.cs" Inherits="AdminResidentInsertUpdate" Title="Resident Insert/Update By Admin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <style type="text/css">
@@ -89,7 +89,7 @@ CodeFile="AdminResidentInsertUpdate.aspx.cs" Inherits="AdminResidentInsertUpdate
        
     </script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentHome" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
 <div id="main_form">
     
@@ -322,209 +322,209 @@ CodeFile="AdminResidentInsertUpdate.aspx.cs" Inherits="AdminResidentInsertUpdate
                     <asp:Label ID="lblMedicaid" runat="server" Text="Medicaid: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtMedicaid" runat="server" Text="">
                     </asp:TextBox><h4>Insurance</h4>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblInsurance" runat="server" Text="Insurance: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtInsurance" runat="server" Text="">
                     </asp:TextBox>
                 </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblInsuranceAddress" runat="server" Text="Address: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtInsuranceAddress" runat="server" Text="" TextMode="MultiLine">
                     </asp:TextBox>
                 </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblInsuranceAddressTelephone" runat="server" Text="Telephone: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtInsuranceAddressTelephone" runat="server" Text="">
                     </asp:TextBox>
                 </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblPolicy" runat="server" Text="Policy: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtPolicy" runat="server" Text="">
                     </asp:TextBox>
                 </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblInsuranceGroup" runat="server" Text="Group: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtInsuranceGroup" runat="server" Text="">
                     </asp:TextBox>
                 </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblInsuranceGroupNo" runat="server" Text="Group #: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtInsuranceGroupNo" runat="server" Text="">
                     </asp:TextBox><h4>Hospital</h4>
                 </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblHospitalPreference" runat="server" Text="Hospital Preference: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtHospitalPreference" runat="server" Text="">
                     </asp:TextBox>
                 </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblHospitalPreferenceTelephone" runat="server" Text="Telephone: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtHospitalPreferenceTelephone" runat="server" Text="">
                     </asp:TextBox>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblHospitalPreferenceEmail" runat="server" Text="Email: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtHospitalPreferenceEmail" runat="server" Text="">
                     </asp:TextBox><h4>Funeral</h4>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblFuneralHomePreference" runat="server" Text="Funeral Home Preference: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtFuneralHomePreference" runat="server" Text="">
                     </asp:TextBox>
                 </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblFuneralHomePreferenceTelephone" runat="server" Text="Telephone: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtFuneralHomePreferenceTelephone" runat="server" Text="">
                     </asp:TextBox><h4>Pharmacy</h4>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblPharmacyPreference" runat="server" Text="Pharmacy Preference: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtPharmacyPreference" runat="server" Text="">
                     </asp:TextBox>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblPharmacyPreferenceTelephone" runat="server" Text="Telephone: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtPharmacyPreferenceTelephone" runat="server" Text="">
                     </asp:TextBox>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblDentist" runat="server" Text="Dentist: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtDentist" runat="server" Text="">
                     </asp:TextBox>
                 </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblDentistTelephone" runat="server" Text="Telephone: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtDentistTelephone" runat="server" Text="">
                     </asp:TextBox><h4>Physician</h4>
                  </li>
-                 <li class="text_box">
+                 <li class="text_box" style="display:none;">
                     <asp:Label ID="lblAttendingPhysician" runat="server" Text="Physician Name: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtAttendingPhysician" runat="server" Text="">
                     </asp:TextBox>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblAttendingPhysicianAddress" runat="server" Text="Address: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtAttendingPhysicianAddress" runat="server" Text="" TextMode="MultiLine">
                     </asp:TextBox>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblAttendingPhysicianTelephone" runat="server" Text="Telephone: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtAttendingPhysicianTelephone" runat="server" Text="">
                     </asp:TextBox><h4>Alternate Physician</h4>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblAlternatePhysician" runat="server" Text="Physician Name: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtAlternatePhysician" runat="server" Text="">
                     </asp:TextBox>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblAlternatePhysicianAddress" runat="server" Text="Address: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtAlternatePhysicianAddress" runat="server" Text="" TextMode="MultiLine">
                     </asp:TextBox>
                 </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblAlternatePhysicianTelephone" runat="server" Text="Telephone: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtAlternatePhysicianTelephone" runat="server" Text="">
                     </asp:TextBox><h4>Physical Exam</h4>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblDateofLastPhysicalExam" runat="server" Text="Date of Last Physical Exam: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtDateofLastPhysicalExam" runat="server" Text="">
                     </asp:TextBox>
                     <%--<ajaxToolkit:CalendarExtender Format="dd MMM yyyy" ID="CalendarExtender2" runat="server" TargetControlID="txtDateofLastPhysicalExam">
                                     </ajaxToolkit:CalendarExtender>--%>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblYearlyPhysicalDue" runat="server" Text="Yearly Physical Due: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtYearlyPhysicalDue" runat="server" Text="">
                     </asp:TextBox>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblDiagnosis" runat="server" Text="Diagnosis: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtDiagnosis" runat="server" Text="" TextMode="MultiLine">
                     </asp:TextBox>
                  </li>
-    <li class="text_box">
+    <li class="text_box" style="display:none;">
                     <asp:Label ID="lblAllergies" runat="server" Text="Allergies: ">
                     </asp:Label>
                 </li>
-    <li class="text_input1">
+    <li class="text_input1" style="display:none;">
                     <asp:TextBox ID="txtAllergies" runat="server" Text="" TextMode="MultiLine">
                     </asp:TextBox>
                  </li>
@@ -532,7 +532,7 @@ CodeFile="AdminResidentInsertUpdate.aspx.cs" Inherits="AdminResidentInsertUpdate
 
    </ul>
              </div>
-        <div class="sub_form" id="fileUpload" runat="server">
+        <div class="sub_form" id="fileUpload" runat="server"  style="display:none;">
             <table width="100%">
                 <tr>
                     <td>
@@ -603,7 +603,7 @@ CodeFile="AdminResidentInsertUpdate.aspx.cs" Inherits="AdminResidentInsertUpdate
                 </tr>
             </table>
         </div>
-<div class="sub_form">
+<div class="sub_form" style="display:none;">
 
 <table width="100%">
     <tr>
@@ -755,7 +755,7 @@ CodeFile="AdminResidentInsertUpdate.aspx.cs" Inherits="AdminResidentInsertUpdate
 </div>  
 
 
-             <div class="sub_form">
+             <div class="sub_form" style="display:none;">
 
     <table width="100%">
     <tr>

@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Login/m_AdminMaster.master" AutoEventWireup="true"
-    CodeFile="Medicaiton_MonthlyMedicaionAdministrationRecord.aspx.cs" Inherits="Resident_ADLRecord" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WithoutLeftMenu.master" AutoEventWireup="true"
+    CodeFile="Medicaiton_MonthlyMedicaionAdministrationRecord_PC.aspx.cs" Inherits="Resident_ADLRecord" %>
 
 <%@ Register Src="../control/DataEntryControlResidentInfo.ascx" TagName="DataEntryControlResidentInfo"
     TagPrefix="uc1" %>
@@ -40,9 +40,9 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentHome" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="single_colom">
-        <div>
+        <div style="padding: 20px;">
             <table width="100%">
                 <tr>
                     <td align="center" style="text-align: center; font-size: 20px; font-weight: bold;">
@@ -65,65 +65,73 @@
                 <tr>
                     <td>
                         <div class="tableMedicinAdd">
-                           
+                            <table>
+                                <tr>
+                                    <td colspan="2">
                                         (Select Either Taking time or PRN)
-                           <br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         <asp:Label ID="lblTakingTime" runat="server" Text="Taking Time: ">
                                                 </asp:Label>
                                         <asp:HiddenField ID="hfMedicationTimeID" runat="server" Value="0" />
-                                    <br />
+                                    </td>
+                                    <td>
                                         <%--For Multiple time please give (,). Format hh:mm AM/PM--%>
                                         <asp:TextBox ID="txtTakingTime" runat="server" Text="" Width="60px">
                                         </asp:TextBox>
-                                    <br />
                                         Or
-                                    <br />
                                         <asp:CheckBox ID="chkPRN" runat="server" Text="PRN" />
-                                    <br />
-                                      <asp:Label ID="lblMedicineID" runat="server" Text="Medication: ">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblMedicineID" runat="server" Text="Medication: ">
                                         </asp:Label>
-                                    <br />
-                                        <asp:DropDownList ID="ddlMedicine" runat="server" Width="75%">
+                                        <asp:DropDownList ID="ddlMedicine" runat="server">
                                         </asp:DropDownList>
-                                    <br />
                                         <asp:TextBox ID="txtNewMedicine" runat="server" Text="">
                                         </asp:TextBox>
-                                    <br />
                                         RX #
                                         <asp:TextBox ID="txtEXNo" runat="server" Text="">
                                         </asp:TextBox>
-                                    <br />
-                                    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         <asp:Label ID="lblQuality" runat="server" Text="Strength: ">
                     </asp:Label>
-                                                                        <br />
-
-                                        <asp:TextBox ID="txtQuality" runat="server" placeholder="325 mg">
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtQuality" runat="server" Text="325 mg">
                                                 </asp:TextBox>
-                                    <br />
                                         <asp:Label ID="lblQuantity" runat="server" Text="Direction For Use: ">
                                                 </asp:Label>
-                                    <br />
                                         <asp:TextBox ID="txtQuantity" Width="266px" runat="server" Text="1 Tablet by mouth">
                                                 </asp:TextBox>
-                                    <br />
                                         <asp:Label ID="lblFrequency" runat="server" Text="Dosage: ">
                                                 </asp:Label>
-                                    <br />
                                         <asp:TextBox ID="txtFrequency" runat="server" Text="3 times daily">
                                                 </asp:TextBox>
-                                    <br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
                                         <asp:Label ID="Label1" runat="server" Text="Pharmacy Name: ">
                                                 </asp:Label>
-                                                                        <br />
-
+                                    </td>
+                                    <td>
                                         <asp:TextBox ID="txtpharmacyName" runat="server" Text="">
                                                 </asp:TextBox>
-                                    <br />
                                         <asp:Label ID="Label2" runat="server" Text="Route of Administration: ">
                                                 </asp:Label>
-                                    <br />
-                                        
+                                        <%--<asp:TextBox ID="txtRouteOfAdmin"  runat="server" Text="">
+                                                </asp:TextBox>--%>
+                                        <%-- a)	By Mouth
+                                                b)	Rectally
+                                                c)	Via G2
+                                                d)	IM
+                                                e)	Sublingually
+                                                f)	Ophthalmic
+                                                g)	Otic
+                                                h)	Topical--%>
                                         <asp:DropDownList ID="ddlRouteOfAdmin" runat="server">
                                             <asp:ListItem Value="By Mouth">By Mouth</asp:ListItem>
                                             <asp:ListItem Value="Rectally">Rectally</asp:ListItem>
@@ -135,10 +143,8 @@
                                             <asp:ListItem Value="Subcutaneous">Subcutaneous</asp:ListItem>
                                             <asp:ListItem Value="Topical">Topical</asp:ListItem>
                                         </asp:DropDownList>
-                                    <br />
                                         <asp:Label ID="Label3" runat="server" Text="Amount received: ">
                                                 </asp:Label>
-                                    <br />
                                         <asp:TextBox ID="txtAmount" runat="server" Text="">
                                                 </asp:TextBox>
                                         <%-- <asp:UpdatePanel ID="UpdatePanel3" runat="server">
@@ -149,20 +155,17 @@
                                                 <td valign="middle">
                                                     Status:
                                                 </td>
-                                                </tr><tr>
                                                 <td valign="middle">
                                                     <asp:DropDownList ID="ddlStatus" runat="server">
                                                         <asp:ListItem Value="Active" Text="Active"></asp:ListItem>
                                                         <asp:ListItem Value="Inactive" Text="Inactive"></asp:ListItem>
                                                     </asp:DropDownList>
                                                 </td>
-                                                </tr><tr>
                                                 <td valign="middle">
                                                     <asp:CheckBox ID="chkAddDischargeRecord" runat="server" Text="Discharge Record?"
                                                         Visible="false" />
                                                     <asp:ImageButton ID="btnAdd" OnClick="btnAdd_Click" runat="server" ImageUrl="../App_Themes/Default/images/save.png" />
                                                 </td>
-                                                </tr><tr>
                                                 <td valign="middle">
                                                     <%--<asp:Button ID="btnAdd" runat="server" Text="Save" OnClick="btnAdd_Click" />--%>
                                                     <asp:Label ID="lblNewMedicationAddedSuccessfully" runat="server" Text="New medication added Successfully."
@@ -172,105 +175,111 @@
                                         </table>
                                         <%--</ContentTemplate>
                                         </asp:UpdatePanel>--%>
-                                    
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </td>
                 </tr>
-                </table>
-                
-                        <hr />
+                <tr>
+                    <td align="left">
+                        <br />
+                        <br />
+                        <br />
                         <span style="font-size: 20px;">Manage Daily Medication</span>
-                        <hr />
-                    
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
                         <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>--%>
-                            
-                            <b>Existing Record</b> 
-                            <br /><asp:DropDownList ID="ddlExistingRecord" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlExistingRecord_SelectedIndexChanged">
-                        </asp:DropDownList><br />
+                            <table>
+                            <tr>
+                                <td valign="middle"><b>Existing Record</b> &nbsp;&nbsp;</td>
+                                <td valign="middle"><asp:DropDownList ID="ddlExistingRecord" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlExistingRecord_SelectedIndexChanged">
+                        </asp:DropDownList></td>
+                                <td valign="middle">&nbsp;&nbsp;
                         <asp:ImageButton ID="btnSave" OnClick="btnSave_Click" runat="server" ImageUrl="../App_Themes/Default/images/save.png" />
                         <%--<asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />--%>
-                       <br /><asp:Label ID="lblMsg" runat="server" Text="Saved Successfully" ForeColor="Green"
-                            Visible="false"></asp:Label>
+                        </td>
+                                <td valign="middle"><asp:Label ID="lblMsg" runat="server" Text="Saved Successfully" ForeColor="Green"
+                            Visible="false"></asp:Label></td>
+                            </tr>
+                            </table>
+
+                        
                         
                         
                         <%--</ContentTemplate>
                         </asp:UpdatePanel>--%>
-                    <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <%--<b>Select Print Option</b> &nbsp;&nbsp;--%>
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:DropDownList ID="ddlMedicationList" runat="server">
                             <asp:ListItem Value="All">All Medicaiton</asp:ListItem>
                             <asp:ListItem Value="PRN">PRN only</asp:ListItem>
                             <asp:ListItem Value="Scheduled">Scheduled only</asp:ListItem>
                         </asp:DropDownList>
-                        <br />
                         <asp:DropDownList ID="ddlPrintOption" runat="server" Visible="false">
                             <asp:ListItem Value="0">All Medication</asp:ListItem>
                             <%--<asp:ListItem Value="1">Selected Medication only</asp:ListItem>--%>
                         </asp:DropDownList>
-                        <br />
+                        &nbsp;&nbsp;
                         <asp:ImageButton ID="btnPrint" OnClick="btnPrint_Click" runat="server" ImageUrl="../App_Themes/Default/images/Print_plain.png" />
-                        <br /> Status
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Status
                         <asp:DropDownList ID="ddlShowStaus" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlShowStaus_SelectedIndexChanged">
                             <asp:ListItem Value="Active" Text="Active only"></asp:ListItem>
                             <asp:ListItem Value="Inactive" Text="Inactive only"></asp:ListItem>
                             <asp:ListItem Value="All" Text="All"></asp:ListItem>
                         </asp:DropDownList>
-                        <br />
-                        Medications<br /><a id="a_Report" runat="server" style="text-decoration: underline;
+                        Medications&nbsp;&nbsp; &nbsp; <a id="a_Report" runat="server" style="text-decoration: underline;
                             color: Blue;">Monthly medication Report</a>
-                    <hr />
+                    </td>
+                </tr>
+                <tr>
+                    <td class='tableCss'>
                         <%--<asp:UpdatePanel ID="UpdatePanel2" runat="server">
                             <ContentTemplate>--%>
                         <asp:GridView ID="gvMedicaiton" runat="server" Width="100%" AutoGenerateColumns="false"
-                            ShowHeader="true" class='tableCss'>
+                            ShowHeader="true">
                             <Columns>
+                                <asp:TemplateField HeaderText="Time">
+                                    <ItemTemplate>
+                                        <asp:CheckBox ID="chkSelect" runat="server" Text='<%#Eval("TakingTime")%>' ValidationGroup='<%#Eval("MedicationTimeID")%>' />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Medication">
                                     <ItemTemplate>
-                                       <b>Time:</b><br /><asp:CheckBox ID="chkSelect" runat="server" Text='<%#Eval("TakingTime")%>' ValidationGroup='<%#Eval("MedicationTimeID")%>' />
-                                    <hr />
-                                    <%--</ItemTemplate>
-                                </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Medication">
-                                    <ItemTemplate>--%>
-                                       <b>Medicine:<br /></b> <%#Eval("MedicineName")%>
-                                        <br />
-                                        <b>Strength:</b><br />
-                                    <%--</ItemTemplate>
+                                        <%#Eval("MedicineName")%>
+                                    </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Strength">
-                                    <ItemTemplate>--%>
+                                    <ItemTemplate>
                                         <%#Eval("Quality")%>
-                                    <%--</ItemTemplate>
+                                    </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Direction For Use">
-                                    <ItemTemplate>--%>
-                                    <br />
-                                    <b>Direction For Use:</b><br />
+                                    <ItemTemplate>
                                         <%#Eval("Quantity")%>
-                                    <%--</ItemTemplate>
+                                    </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Dosage">
-                                    <ItemTemplate>--%>
-                                    <br />
-                                   <b>Dosage:</b><br />
+                                    <ItemTemplate>
                                         <%#Eval("Frequency")%>
-                                    <%--</ItemTemplate>
+                                    </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Added By">
-                                    <ItemTemplate>--%>
-                                    <br />
-                                    <b>Added By:</b><br />
+                                    <ItemTemplate>
                                         <%#Eval("UpdateByUser")%>
-                                   <%-- </ItemTemplate>
+                                    </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Saved By">
-                                    <ItemTemplate>--%>
-                                    <br /><b>Saved By:</b><br />
+                                    <ItemTemplate>
                                         <asp:Label ID="lblSavedBy" runat="server" Text=""></asp:Label>
-                                        <br />
-                                        <b>Comment:</b><br />
-                                        <asp:TextBox ID="txtComment" runat="server"></asp:TextBox>
-
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="">
@@ -284,15 +293,18 @@
                                                   AlternateText="Delete" ImageUrl="~/App_Themes/CoffeyGreen/images/icon-delete.png"/>--%>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <%--<asp:TemplateField HeaderText="Comment">
+                                <asp:TemplateField HeaderText="Comment">
                                     <ItemTemplate>
+                                        <asp:TextBox ID="txtComment" runat="server"></asp:TextBox>
                                     </ItemTemplate>
-                                </asp:TemplateField>--%>
+                                </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
                         <%--</ContentTemplate>
                         </asp:UpdatePanel>--%>
-                   
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </asp:Content>

@@ -106,7 +106,7 @@ public partial class AdminResidentDisplay : System.Web.UI.Page
         {
             html1 += "<tr>";
 
-            html1 += "<td><a href='#'>" + dr["Name"].ToString() + @"</a></td>";
+            html1 += "<td><a href='AdminResidentInsertUpdate.aspx?residentID=" + dr["ResidentID"].ToString() + @"'>" + dr["Name"].ToString() + @"</a></td>";
             html1 += "<td><a href=\"javascript:ShowDiv('res"+dr["ResidentID"].ToString()+"', 'TblDashBoard')\">Task</a></td>";
 
             html1 += "</tr>";

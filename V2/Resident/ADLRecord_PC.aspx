@@ -1,5 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Login/m_AdminMaster.master" AutoEventWireup="true"
-    CodeFile="ADLRecord.aspx.cs" Inherits="Resident_ADLRecord" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WithoutLeftMenu.master" AutoEventWireup="true"
+    CodeFile="ADLRecord_PC.aspx.cs" Inherits="Resident_ADLRecord" %>
 
 <%@ Register Src="../control/DataEntryControlResidentInfo.ascx" TagName="DataEntryControlResidentInfo"
     TagPrefix="uc1" %>
@@ -23,7 +23,7 @@
         .tableMedicinAdd
         {
             width: 100%;
-            /*padding: 30px;*/
+            padding: 30px;
             font-weight: bold;
         }
         .tableCss
@@ -41,9 +41,9 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentHome" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="single_colom">
-        <div>
+        <div style="padding: 20px;">
             <table width="100%">
                 <tr>
                     <td align="center" style="text-align: center; font-size: 20px; font-weight: bold;">
@@ -92,9 +92,9 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <asp:DataList ID="dlADLDetail" runat="server" CellPadding="20" CellSpacing="5" BorderWidth="1" RepeatColumns="1" RepeatDirection="Horizontal">
+                                                <asp:DataList ID="dlADLDetail" runat="server" RepeatColumns="5" RepeatDirection="Horizontal">
                                                     <ItemTemplate>
-                                                        <asp:CheckBox ID="chkSelect" Font-Size="20px" runat="server" Text='<%#Eval("ADLDetailName") %>' ValidationGroup='<%#Eval("ADLDetailID") %>' />
+                                                        <asp:CheckBox ID="chkSelect" runat="server" Text='<%#Eval("ADLDetailName") %>' ValidationGroup='<%#Eval("ADLDetailID") %>' />
                                                     </ItemTemplate>
                                                 </asp:DataList>
                                             </td>
@@ -164,26 +164,18 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="width: 5px">
+                                                        <td style="width: 20px">
                                                         </td>
                                                         <td>
                                                             <asp:GridView ID="gvDetail" runat="server" AutoGenerateColumns="false" ShowHeader="true">
                                                                 <Columns>
-                                                                    <asp:TemplateField HeaderText="ADL" >
+                                                                    <asp:TemplateField HeaderText="ADL" ItemStyle-Width="150px">
                                                                         <ItemTemplate>
                                                                             <div style="display: none;">
                                                                                 <asp:CheckBox ID="chkSelect" runat="server" Text='<%#Eval("ADLDetailName")%>' ValidationGroup='<%#Eval("ExtraField1")%>' /></div>
                                                                             <%#Eval("ADLDetailName")%>
                                                                             <asp:HiddenField ID="hfADLHeaderDetialID" runat="server" Value='<%#Eval("ExtraField1")%>' />
                                                                             <asp:HiddenField ID="hfADLDetailID" runat="server" Value='<%#Eval("ADLDetailID")%>' />
-                                                                        <br />
-                                                                        Remarks
-                                                                        <br />
-                                                                            <asp:TextBox ID="txtRemark" runat="server" TextMode="MultiLine" Height="22px"></asp:TextBox>
-<br />
-Saved By
-<br />
-                                                                            <asp:Label ID="lblSavedBy" runat="server" Text=""></asp:Label>
                                                                         </ItemTemplate>
                                                                     </asp:TemplateField>
                                                                     <asp:TemplateField HeaderText="Status">
@@ -191,8 +183,8 @@ Saved By
                                                                             <table>
                                                                                 <tr>
                                                                                     <td>
-                                                                                        <asp:RadioButtonList ID="rbtnlADLStatusInGrid" CellPadding="20" runat="server" RepeatDirection="Vertical"
-                                                                                            RepeatColumns="1">
+                                                                                        <asp:RadioButtonList ID="rbtnlADLStatusInGrid" runat="server" RepeatDirection="Horizontal"
+                                                                                            RepeatColumns="5">
                                                                                         </asp:RadioButtonList>
                                                                                         <asp:DropDownList ID="ddlADLStatusInGrid" runat="server" Visible="false">
                                                                                         </asp:DropDownList>
@@ -204,7 +196,16 @@ Saved By
                                                                             </table>
                                                                         </ItemTemplate>
                                                                     </asp:TemplateField>
-                                                                    
+                                                                    <asp:TemplateField HeaderText="Remark">
+                                                                        <ItemTemplate>
+                                                                            <asp:TextBox ID="txtRemark" runat="server" TextMode="MultiLine" Height="22px"></asp:TextBox>
+                                                                        </ItemTemplate>
+                                                                    </asp:TemplateField>
+                                                                    <asp:TemplateField HeaderText="Saved By">
+                                                                        <ItemTemplate>
+                                                                            <asp:Label ID="lblSavedBy" runat="server" Text=""></asp:Label>
+                                                                        </ItemTemplate>
+                                                                    </asp:TemplateField>
                                                                 </Columns>
                                                             </asp:GridView>
                                                         </td>
