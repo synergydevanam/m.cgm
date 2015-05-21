@@ -19,36 +19,36 @@
                 <HeaderStyle BackColor="#DFEAF5" />
             <Columns>
                 
-                <asp:TemplateField HeaderText="ID">
+                <%--<asp:TemplateField HeaderText="ID">
                     <ItemTemplate>
                         <asp:Label ID="lblPropertyName" runat="server" Text='<%#Eval("ExtraField4") %>'>
                         </asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
                 <asp:TemplateField HeaderText="Address">
                     <ItemTemplate>
                         <asp:Label ID="lblAddress" runat="server" Text='<%#Eval("Address") %>'>
                         </asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="City">
+                <%--<asp:TemplateField HeaderText="City">
                     <ItemTemplate>
                         <asp:Label ID="lblCity" runat="server" Text='<%#Eval("ExtraField1") %>'>
                         </asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="State">
+                </asp:TemplateField>--%>
+                <%--<asp:TemplateField HeaderText="State">
                     <ItemTemplate>
                         <asp:Label ID="lblState" runat="server" Text='<%#Eval("ExtraField3") %>'>
                         </asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Zip">
+                </asp:TemplateField>--%>
+                <%--<asp:TemplateField HeaderText="Zip">
                     <ItemTemplate>
                         <asp:Label ID="lblZip" runat="server" Text='<%#Eval("ExtraField2") %>'>
                         </asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
                 <asp:TemplateField HeaderText="Company">
                     <ItemTemplate>
                         <asp:Label ID="lblCompany" runat="server" Text='<%#Eval("ExtraField6") %>'>
@@ -97,18 +97,18 @@
                         </asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>--%>
-                <asp:TemplateField HeaderText="Contact no">
+                <%--<asp:TemplateField HeaderText="Contact no">
                     <ItemTemplate>
                         <asp:Label ID="lblExtraField8" runat="server" Text='<%#Eval("ExtraField8") %>'>
                         </asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Contact Person">
+                </asp:TemplateField>--%>
+                <%--<asp:TemplateField HeaderText="Contact Person">
                     <ItemTemplate>
                         <asp:Label ID="lblExtraField9" runat="server" Text='<%#Eval("ExtraField9") %>'>
                         </asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
                 <%--<asp:TemplateField HeaderText="ExtraField10">
                     <ItemTemplate>
                         <asp:Label ID="lblExtraField10" runat="server" Text='<%#Eval("ExtraField10") %>'>
