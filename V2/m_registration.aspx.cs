@@ -56,11 +56,28 @@ public partial class Default2 : System.Web.UI.Page
         login.ExtraField9 = "";
         login.ExtraField10 = "";
         int resutl = LoginManager.InsertLogin(login);
-
+        //add as office admin
+        string sql = @"INSERT INTO [Login_LoginRole]
+           ([RoleID]
+           ,[LoginID]
+           ,[RowStatusID]
+           ,[AddedDate]
+           ,[AddedBy]
+           ,[ModifyDate]
+           ,[ModifyBy])
+        VALUES
+           (6--<RoleID, int,>
+           ,"+resutl+ @"--<LoginID, int,>
+           ,1--<RowStatusID, int,>
+           ,GETDATE()--<AddedDate, datetime,>
+           ,'Self'--<AddedBy, nvarchar(256),>
+           ,GETDATE()--<ModifyDate, datetime,>
+           ,'Self'--<ModifyBy, nvarchar(256),>
+            );";
         lblMsg.Text = "Added Successfully<br/>";
         lblMsg.ForeColor = System.Drawing.Color.Green;
         //Response.Redirect("AdminLoginDisplay.aspx");
 
-        Response.Redirect("registration-step2.aspx?LoginID=" + resutl);
+        Response.Redirect("m_registration-step2.aspx?LoginID=" + resutl);
     }
 }

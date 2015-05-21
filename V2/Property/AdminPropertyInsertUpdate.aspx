@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/Default.master" AutoEventWireup="true" 
+<%@ Page Language="C#" MasterPageFile="~/Login/m_AdminMaster.master" AutoEventWireup="true" 
 CodeFile="AdminPropertyInsertUpdate.aspx.cs" Inherits="AdminPropertyInsertUpdate" Title="Property Insert/Update By Admin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
@@ -9,7 +9,7 @@ CodeFile="AdminPropertyInsertUpdate.aspx.cs" Inherits="AdminPropertyInsertUpdate
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentHome" Runat="Server">
    
    <div id="main_form">
    <table width="100%">

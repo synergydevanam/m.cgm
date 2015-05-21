@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="AdminMaster.master" AutoEventWireup="true"
+<%@ Page Language="C#" MasterPageFile="~/Login/m_AdminMaster.master" AutoEventWireup="true"
     CodeFile="AdminLoginDisplay.aspx.cs" Inherits="AdminLoginDisplay" Title="Display Login By Admin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -11,7 +11,7 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentHome" runat="Server">
     <div>
         <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
         <asp:GridView ID="gvLogin" runat="server" AutoGenerateColumns="false" CssClass="gridCss">
@@ -19,7 +19,7 @@
                 <asp:TemplateField HeaderText="Select">
                     <ItemTemplate>
                         <asp:LinkButton ID="lbSelect" runat="server" CommandArgument='<%#Eval("LoginID") %>' OnClick="lbSelect_Click">
-                            Select
+                            Edit
                         </asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
@@ -39,32 +39,36 @@
                     <ItemTemplate>
                         <asp:Label ID="lblEmail" runat="server" Text='<%#Eval("Email") %>'>
                         </asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Name">
-                    <ItemTemplate>
+                        <br />
                         <asp:Label ID="lblFirstName" runat="server" Text='<%#Eval("FirstName") %>'>
                         </asp:Label>&nbsp;
-                   <%-- </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="MiddleName">
-                    <ItemTemplate>--%>
                         <asp:Label ID="lblMiddleName" runat="server" Text='<%#Eval("MiddleName") %>'>
                         </asp:Label>&nbsp;
-                    <%--</ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="LastName">
-                    <ItemTemplate>--%>
                         <asp:Label ID="lblLastName" runat="server" Text='<%#Eval("LastName") %>'>
                         </asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Initial">
+               <%-- <asp:TemplateField HeaderText="Name">
+                    <ItemTemplate>--%>
+                        
+                   <%-- </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="MiddleName">
+                    <ItemTemplate>--%>
+                        
+                    <%--</ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="LastName">
+                    <ItemTemplate>--%>
+                        
+                    <%--</ItemTemplate>
+                </asp:TemplateField>--%>
+                <%--<asp:TemplateField HeaderText="Initial">
                     <ItemTemplate>
                     <%#Eval("ExtraField4") %>
                     </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Phone">
+                </asp:TemplateField>--%>
+                <%--<asp:TemplateField HeaderText="Phone">
                     <ItemTemplate>
                         CellPhone : <asp:Label ID="lblCellPhone" runat="server" Text='<%#Eval("CellPhone") %>'>
                         </asp:Label><br />
@@ -72,16 +76,16 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="HomePhone">
                     <ItemTemplate>--%>
-                        HomePhone : <asp:Label ID="lblHomePhone" runat="server" Text='<%#Eval("HomePhone") %>'>
-                        </asp:Label><br />
+                        <%--HomePhone : <asp:Label ID="lblHomePhone" runat="server" Text='<%#Eval("HomePhone") %>'>
+                        </asp:Label><br />--%>
                     <%--</ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="WorkPhone">
                     <ItemTemplate>--%>
-                       WorkPhone : <asp:Label ID="lblWorkPhone" runat="server" Text='<%#Eval("WorkPhone") %>'>
+                      <%-- WorkPhone : <asp:Label ID="lblWorkPhone" runat="server" Text='<%#Eval("WorkPhone") %>'>
                         </asp:Label>
                     </ItemTemplate>
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
                 <%--<asp:TemplateField HeaderText="RowStatusID">
                     <ItemTemplate>
                         <asp:Label ID="lblRowStatusID" runat="server" Text='<%#Eval("RowStatusID") %>'>
@@ -178,13 +182,13 @@
                         </asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>--%>
-                <asp:TemplateField HeaderText="Delete">
+                <%--<asp:TemplateField HeaderText="Delete">
                     <ItemTemplate>
                         <asp:LinkButton ID="lbDelete" runat="server" CommandArgument='<%#Eval("LoginID") %>' OnClick="lbDelete_Click">
                             Delete
                         </asp:LinkButton>
                     </ItemTemplate>
-                </asp:TemplateField>
+                </asp:TemplateField>--%>
             </Columns>
         </asp:GridView>
     </div>

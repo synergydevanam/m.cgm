@@ -19,11 +19,13 @@ public partial class Default2 : System.Web.UI.Page
         string sql = @"update [Login_Login] set [ExtraField5]='"+txtCardHolderName.Text+@"'
                  ,[ExtraField6]='" + txtCardNO.Text + @"'
                  ,[ExtraField7]='" + txtExpireDate.Text + @"'
-                 ,[ExtraField8]='" + txtExpireDate.Text + @"'
+                 ,[ExtraField8]='" + txtCSC.Text + @"@" + ddlCardType.SelectedValue + @"'
                  ,[ExtraField9]='" + txtResidentNumber.Text + @"'
-                where [LoginID]="+Request.QueryString["LoginID"];
+                 ,[ExtraField10]='" + ((decimal.Parse(txtResidentNumber.Text)* decimal.Parse("1.00"))+decimal.Parse("99.00")).ToString("0.00") + @"'
+                where [LoginID]=" +Request.QueryString["LoginID"];
 
         CommonManager.SQLExec(sql);
-        Response.Redirect("LoginPage.aspx");
+
+        Response.Redirect(PaymentManager.GetPayPalPaymentUrl(int.Parse(Request.QueryString["LoginID"]), false), true); ;
     }
 }

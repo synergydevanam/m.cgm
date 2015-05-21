@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="AdminMaster.master" AutoEventWireup="true"
+<%@ Page Language="C#" MasterPageFile="m_AdminMaster.master" AutoEventWireup="true"
     CodeFile="LoginCreateAfterLogin.aspx.cs" Inherits="AdminLoginInsertUpdate" Title="Login Insert/Update By Admin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -9,7 +9,7 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentHome" runat="Server">
     <div class="tableCss">
         <h1>
             Add / Update User</h1>
@@ -191,20 +191,10 @@
                         </tr>
                     </table>
                 </td>
+                </tr><tr>
                 <td valign="top">
                     <table>
-                        <tr>
-                            <td>
-                                <br />
-                                <br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <br />
-                                <br />
-                            </td>
-                        </tr>
+                        
                         <tr>
                             <td>
                                 <asp:CompareValidator ID="CompareValidator1" runat="server" ValidationGroup="CreateUserWizard1"

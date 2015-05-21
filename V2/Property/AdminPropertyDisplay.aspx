@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="~/WithoutLeftMenu.master" AutoEventWireup="true"
+<%@ Page Language="C#" MasterPageFile="~/Login/m_AdminMaster.master" AutoEventWireup="true"
     CodeFile="AdminPropertyDisplay.aspx.cs" Inherits="AdminPropertyDisplay" Title="Display Property By Admin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -11,7 +11,7 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentHome" runat="Server">
    <div class="single_colom"><div style="padding:20px;">
     <p>Property List</p>
     <asp:HiddenField ID="hfHasSearchCompleted" Value="0" runat="server" />

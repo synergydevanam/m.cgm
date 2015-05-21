@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentNav" runat="server">
     <ul>
-		<li><a class="leftNav" href = "Default.aspx">Home</a></li>
+		<%--<li><a class="leftNav" href = "Default.aspx">Home</a></li>--%>
 		<li><a class = "rightNav" href = "loginPage.aspx">Login</a></li>
 	</ul>
 </asp:Content>
