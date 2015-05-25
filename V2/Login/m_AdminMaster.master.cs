@@ -25,115 +25,115 @@ public partial class MasterPage : System.Web.UI.MasterPage
         string lastModule = "";
         for (int i = 0; i < dsMenu.Tables[0].Rows.Count; i++)
         {
-            /*
+
             if (
-                dsMenu.Tables[0].Rows[i]["MenuID"].ToString() != "21"
-                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() != "22"
-                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() != "5"
-                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() != "6"
-                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() != "28"
-                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() != "29"
+                dsMenu.Tables[0].Rows[i]["MenuID"].ToString() == "21"
+                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() == "22"
+                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() == "5"
+                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() == "6"
+                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() == "28"
+                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() == "29"
 
                 )
-                continue;
-             * */
-            if (lastModule == "")
             {
-                lastModule = dsMenu.Tables[0].Rows[i]["ModuleName"].ToString();
-                //lblMenu.Text += "<li><a href='../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString() + "' class='menulink' >" + lastModule + "</a>";
-                ddlMenu.Items.Add(new ListItem(lastModule,"../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString()));
-                if (dsMenu.Tables[0].Rows.Count == 1) //when the single module with no summenu
+                if (lastModule == "")
                 {
-                    //lblMenu.Text += "</li></ul>";
-                    return;
-                }
-                else
-                {
-                    if (lastModule != dsMenu.Tables[0].Rows[i + 1]["ModuleName"].ToString()) // 1st module with no submenu but has some other module
+                    lastModule = dsMenu.Tables[0].Rows[i]["ModuleName"].ToString();
+                    //lblMenu.Text += "<li><a href='../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString() + "' class='menulink' >" + lastModule + "</a>";
+                    ddlMenu.Items.Add(new ListItem(lastModule, "../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString()));
+                    if (dsMenu.Tables[0].Rows.Count == 1) //when the single module with no summenu
                     {
-                        //lblMenu.Text += "</li>";
-                        isPreviousMenuWasSingleMenuModule = true;
-                        dsMenu.Tables[0].Rows[i]["Usered"] = "Yes";
-                        continue;
+                        //lblMenu.Text += "</li></ul>";
+                        return;
                     }
                     else
                     {
-                        //lblMenu.Text += "<ul>";
-                        isPreviousMenuWasSingleMenuModule = false;
-                    }
-                }
-            }
-
-
-            if (lastModule != dsMenu.Tables[0].Rows[i]["ModuleName"].ToString())
-            {
-                bool isSingleModule = true;
-                if (!isPreviousMenuWasSingleMenuModule)
-                {
-                    //lblMenu.Text += "</ul></li>";
-                }
-
-                lastModule = dsMenu.Tables[0].Rows[i]["ModuleName"].ToString();
-                //lblMenu.Text += "<li><a href='../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString() + "' class='menulink' >" + lastModule + "</a>";
-                ddlMenu.Items.Add(new ListItem(lastModule, "../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString()));
-
-                if ((i == (dsMenu.Tables[0].Rows.Count - 1)) && dsMenu.Tables[0].Rows[i]["ModuleName"].ToString() != dsMenu.Tables[0].Rows[i - 1]["ModuleName"].ToString()) // when last module has no sub menu
-                {
-                    //lblMenu.Text += "</li></ul>";
-                    return;
-                }
-                else
-                {
-                    if (dsMenu.Tables[0].Rows[i]["ModuleName"].ToString() != dsMenu.Tables[0].Rows[i + 1]["ModuleName"].ToString()) //module with no sub menu is in middle
-                    {
-                        //lblMenu.Text += "</li>";
-                        isPreviousMenuWasSingleMenuModule = true;
-                        dsMenu.Tables[0].Rows[i]["Usered"] = "Yes";
-                        continue;
-                    }
-                    else
-                    {
-                        //lblMenu.Text += "<ul>";
-                        isPreviousMenuWasSingleMenuModule = false;
-                    }
-                }
-
-            }
-
-            if (dsMenu.Tables[0].Rows[i]["Usered"].ToString() != "Yes")
-            {
-                //lblMenu.Text += "<li><a href='../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["PageURL"].ToString() + "'";
-                dsMenu.Tables[0].Rows[i]["Usered"] = "Yes";
-                int count = 0;
-                foreach (DataRow drSubMenu in dsMenu.Tables[0].Rows)
-                {
-                    if (lastModule == drSubMenu["ModuleName"].ToString()
-                        && drSubMenu["Usered"].ToString() == ""
-                        && drSubMenu["ParentMenuID"].ToString() == dsMenu.Tables[0].Rows[i]["MenuID"].ToString())
-                    {
-                        if (count++ == 0)
+                        if (lastModule != dsMenu.Tables[0].Rows[i + 1]["ModuleName"].ToString()) // 1st module with no submenu but has some other module
                         {
-                            ddlMenu.Items.Add(new ListItem(dsMenu.Tables[0].Rows[i]["MenuTitle"].ToString(), "../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["PageURL"].ToString()));
-                           // lblMenu.Text += " class='sub'>" + dsMenu.Tables[0].Rows[i]["MenuTitle"].ToString() + "</a>";
-                            //lblMenu.Text += "<ul>";
+                            //lblMenu.Text += "</li>";
+                            isPreviousMenuWasSingleMenuModule = true;
+                            dsMenu.Tables[0].Rows[i]["Usered"] = "Yes";
+                            continue;
                         }
-
-                        //lblMenu.Text += "<li class='topline'><a href='" + "../" + drSubMenu["FolderName"].ToString() + "/" + drSubMenu["PageURL"].ToString() + "' >" + drSubMenu["MenuTitle"].ToString() + "</a></li>";
-                        ddlMenu.Items.Add(new ListItem("--"+drSubMenu["MenuTitle"].ToString(), "../" + drSubMenu["FolderName"].ToString() + "/" + drSubMenu["PageURL"].ToString()));
-
-                        drSubMenu["Usered"] = "Yes";
-                        //lblMenu.Text += "";
+                        else
+                        {
+                            //lblMenu.Text += "<ul>";
+                            isPreviousMenuWasSingleMenuModule = false;
+                        }
                     }
                 }
 
-                if (count == 0)
+
+                if (lastModule != dsMenu.Tables[0].Rows[i]["ModuleName"].ToString())
                 {
-                    ddlMenu.Items.Add(new ListItem("--"+dsMenu.Tables[0].Rows[i]["MenuTitle"].ToString(), "../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["PageURL"].ToString()));
-                    //lblMenu.Text += ">" + dsMenu.Tables[0].Rows[i]["MenuTitle"].ToString() + "</a></li>";
+                    bool isSingleModule = true;
+                    if (!isPreviousMenuWasSingleMenuModule)
+                    {
+                        //lblMenu.Text += "</ul></li>";
+                    }
+
+                    lastModule = dsMenu.Tables[0].Rows[i]["ModuleName"].ToString();
+                    //lblMenu.Text += "<li><a href='../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString() + "' class='menulink' >" + lastModule + "</a>";
+                    ddlMenu.Items.Add(new ListItem(lastModule, "../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString()));
+
+                    if ((i == (dsMenu.Tables[0].Rows.Count - 1)) && dsMenu.Tables[0].Rows[i]["ModuleName"].ToString() != dsMenu.Tables[0].Rows[i - 1]["ModuleName"].ToString()) // when last module has no sub menu
+                    {
+                        //lblMenu.Text += "</li></ul>";
+                        return;
+                    }
+                    else
+                    {
+                        if (dsMenu.Tables[0].Rows[i]["ModuleName"].ToString() != dsMenu.Tables[0].Rows[i + 1]["ModuleName"].ToString()) //module with no sub menu is in middle
+                        {
+                            //lblMenu.Text += "</li>";
+                            isPreviousMenuWasSingleMenuModule = true;
+                            dsMenu.Tables[0].Rows[i]["Usered"] = "Yes";
+                            continue;
+                        }
+                        else
+                        {
+                            //lblMenu.Text += "<ul>";
+                            isPreviousMenuWasSingleMenuModule = false;
+                        }
+                    }
+
                 }
-                else
+
+                if (dsMenu.Tables[0].Rows[i]["Usered"].ToString() != "Yes")
                 {
-                    //lblMenu.Text += "</ul></li>";
+                    //lblMenu.Text += "<li><a href='../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["PageURL"].ToString() + "'";
+                    dsMenu.Tables[0].Rows[i]["Usered"] = "Yes";
+                    int count = 0;
+                    foreach (DataRow drSubMenu in dsMenu.Tables[0].Rows)
+                    {
+                        if (lastModule == drSubMenu["ModuleName"].ToString()
+                            && drSubMenu["Usered"].ToString() == ""
+                            && drSubMenu["ParentMenuID"].ToString() == dsMenu.Tables[0].Rows[i]["MenuID"].ToString())
+                        {
+                            if (count++ == 0)
+                            {
+                                ddlMenu.Items.Add(new ListItem(dsMenu.Tables[0].Rows[i]["MenuTitle"].ToString(), "../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["PageURL"].ToString()));
+                                // lblMenu.Text += " class='sub'>" + dsMenu.Tables[0].Rows[i]["MenuTitle"].ToString() + "</a>";
+                                //lblMenu.Text += "<ul>";
+                            }
+
+                            //lblMenu.Text += "<li class='topline'><a href='" + "../" + drSubMenu["FolderName"].ToString() + "/" + drSubMenu["PageURL"].ToString() + "' >" + drSubMenu["MenuTitle"].ToString() + "</a></li>";
+                            ddlMenu.Items.Add(new ListItem("--" + drSubMenu["MenuTitle"].ToString(), "../" + drSubMenu["FolderName"].ToString() + "/" + drSubMenu["PageURL"].ToString()));
+
+                            drSubMenu["Usered"] = "Yes";
+                            //lblMenu.Text += "";
+                        }
+                    }
+
+                    if (count == 0)
+                    {
+                        ddlMenu.Items.Add(new ListItem("--" + dsMenu.Tables[0].Rows[i]["MenuTitle"].ToString(), "../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["PageURL"].ToString()));
+                        //lblMenu.Text += ">" + dsMenu.Tables[0].Rows[i]["MenuTitle"].ToString() + "</a></li>";
+                    }
+                    else
+                    {
+                        //lblMenu.Text += "</ul></li>";
+                    }
                 }
             }
         }
