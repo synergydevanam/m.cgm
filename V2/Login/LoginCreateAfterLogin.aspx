@@ -14,6 +14,63 @@
         <h1>
             Add / Update User</h1>
         <table>
+           <tr>
+                <td valign="top">
+                    <table>
+                        
+                        <tr>
+                            <td>
+                                <asp:CompareValidator ID="CompareValidator1" runat="server" ValidationGroup="CreateUserWizard1"
+                                    Style="width: 100%; text-align: center;" ErrorMessage="Password and Confrim Password Does not match"
+                                    ControlToCompare="txtPassword" ControlToValidate="txtPasswordConfirm"></asp:CompareValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" Style="width: 100%;
+                                    text-align: center;" runat="server" ControlToValidate="txtEmail" ErrorMessage="Not a Valid Email Address"
+                                    SetFocusOnError="True" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                    ValidationGroup="CreateUserWizard1"></asp:RegularExpressionValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="10" cellspacing="5">
+                                <tr>
+                                    <td>
+                                        Role
+                                    </td>
+                                </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            <asp:DataList ID="dlRole" runat="server">
+                                                <ItemTemplate>
+                                                    <asp:CheckBox ID="chkSelect" runat="server" Text='<%#Eval("RoleName") %>' ToolTip='<%#Eval("RoleID") %>' />
+                                                </ItemTemplate>
+                                            </asp:DataList>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    <td>
+                                        Property
+                                    </td>
+                                </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            <asp:DataList ID="dlProperty" runat="server">
+                                                <ItemTemplate>
+                                                    <asp:CheckBox ID="chkSelect" runat="server" Text='<%#Eval("Address") %>'
+                                                                ToolTip='<%#Eval("PropertyID") %>' />
+                                                </ItemTemplate>
+                                            </asp:DataList>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
             <tr>
                 <td>
                     <table>
@@ -191,63 +248,8 @@
                         </tr>
                     </table>
                 </td>
-                </tr><tr>
-                <td valign="top">
-                    <table>
-                        
-                        <tr>
-                            <td>
-                                <asp:CompareValidator ID="CompareValidator1" runat="server" ValidationGroup="CreateUserWizard1"
-                                    Style="width: 100%; text-align: center;" ErrorMessage="Password and Confrim Password Does not match"
-                                    ControlToCompare="txtPassword" ControlToValidate="txtPasswordConfirm"></asp:CompareValidator>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" Style="width: 100%;
-                                    text-align: center;" runat="server" ControlToValidate="txtEmail" ErrorMessage="Not a Valid Email Address"
-                                    SetFocusOnError="True" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                                    ValidationGroup="CreateUserWizard1"></asp:RegularExpressionValidator>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <table border="0" cellpadding="10" cellspacing="5">
-                                <tr>
-                                    <td>
-                                        Role
-                                    </td>
-                                </tr>
-                                    <tr>
-                                        <td valign="top">
-                                            <asp:DataList ID="dlRole" runat="server">
-                                                <ItemTemplate>
-                                                    <asp:CheckBox ID="chkSelect" runat="server" Text='<%#Eval("RoleName") %>' ToolTip='<%#Eval("RoleID") %>' />
-                                                </ItemTemplate>
-                                            </asp:DataList>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                    <td>
-                                        Property
-                                    </td>
-                                </tr>
-                                    <tr>
-                                        <td valign="top">
-                                            <asp:DataList ID="dlProperty" runat="server">
-                                                <ItemTemplate>
-                                                    <asp:CheckBox ID="chkSelect" runat="server" Text='<%#Eval("Address") %>'
-                                                                ToolTip='<%#Eval("PropertyID") %>' />
-                                                </ItemTemplate>
-                                            </asp:DataList>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
+                </tr>
+             
         </table>
     </div>
 </asp:Content>
