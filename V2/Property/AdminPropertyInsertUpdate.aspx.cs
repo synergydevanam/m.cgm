@@ -35,12 +35,20 @@ public partial class AdminPropertyInsertUpdate : System.Web.UI.Page
                     btnAdd.Visible = false;
                     btnUpdate.Visible = true;
                     showPropertyData();
+                    lblCompany.Visible = false;
+                    txtCompany.Visible = false;
                 }
             }
         }
     }
     protected void btnAdd_Click(object sender, EventArgs e)
     {
+        string companyID = ddlCompnay.SelectedValue;
+        if (txtCompany.Text.Trim() != "")
+        {
+            companyID=CommonManager.SQLExec(@"insert into AL_Company values('" + txtCompany.Text + @"');Select top 1 CompanyID from AL_Company order by CompanyID desc").Tables[0].Rows[0][0].ToString();
+        }
+
         Property property = new Property();
 
         property.PropertyName = txtPropertyName.Text;
@@ -52,7 +60,7 @@ public partial class AdminPropertyInsertUpdate : System.Web.UI.Page
         property.ExtraField2 = txtExtraField2.Text;
         property.ExtraField3 = txtExtraField3.Text;
         property.ExtraField4 = txtExtraField4.Text;
-        property.ExtraField5 = ddlCompnay.SelectedValue;
+        property.ExtraField5 = companyID;
         property.ExtraField6 = txtExtraField6.Text;
         property.ExtraField7 = ddlStatus.SelectedValue; 
         property.ExtraField8 = txtExtraField8.Text;

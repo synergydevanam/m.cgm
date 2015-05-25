@@ -21,8 +21,9 @@
 	
 	<div id = "nav">
         <ul>
+        
 		<li>
-            <asp:DropDownList ID="ddlMenu" runat="server" AutoPostBack="True" 
+           <b style="color:White;font-weight:bold;">Menu:</b> <asp:DropDownList ID="ddlMenu" runat="server" AutoPostBack="True" 
                 onselectedindexchanged="ddlMenu_SelectedIndexChanged">
             </asp:DropDownList>
         </li>

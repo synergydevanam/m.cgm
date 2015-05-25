@@ -25,7 +25,18 @@ public partial class MasterPage : System.Web.UI.MasterPage
         string lastModule = "";
         for (int i = 0; i < dsMenu.Tables[0].Rows.Count; i++)
         {
+            /*
+            if (
+                dsMenu.Tables[0].Rows[i]["MenuID"].ToString() != "21"
+                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() != "22"
+                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() != "5"
+                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() != "6"
+                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() != "28"
+                || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() != "29"
 
+                )
+                continue;
+             * */
             if (lastModule == "")
             {
                 lastModule = dsMenu.Tables[0].Rows[i]["ModuleName"].ToString();

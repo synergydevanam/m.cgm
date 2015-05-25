@@ -43,6 +43,10 @@ CodeFile="AdminPropertyInsertUpdate.aspx.cs" Inherits="AdminPropertyInsertUpdate
     <li>
                     <asp:DropDownList ID="ddlCompnay" runat="server">
                     </asp:DropDownList>
+        <asp:Label ID="lblCompany" runat="server" Text="<br />or<br/>New Company<br />"></asp:Label>
+                    
+                    <asp:TextBox ID="txtCompany" runat="server" Text="" >
+                    </asp:TextBox>
                 </li>
     <li class="text_box" style="display:none;">
                     <asp:Label ID="lblPropertyName" runat="server" Text="PropertyName: ">
