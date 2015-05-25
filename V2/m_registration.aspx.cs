@@ -70,9 +70,9 @@ public partial class Default2 : System.Web.UI.Page
            ,"+resutl+ @"--<LoginID, int,>
            ,1--<RowStatusID, int,>
            ,GETDATE()--<AddedDate, datetime,>
-           ,'Self'--<AddedBy, nvarchar(256),>
+           ,'1'--<AddedBy, nvarchar(256),>
            ,GETDATE()--<ModifyDate, datetime,>
-           ,'Self'--<ModifyBy, nvarchar(256),>
+           ,'1'--<ModifyBy, nvarchar(256),>
             );";
         lblMsg.Text = "Added Successfully<br/>";
         lblMsg.ForeColor = System.Drawing.Color.Green;
