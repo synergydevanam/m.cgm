@@ -70,7 +70,7 @@ public partial class AdminPropertyInsertUpdate : System.Web.UI.Page
         property.ExtraField10 = txtExtraField10.Text;
         int resutl = PropertyManager.InsertProperty(property);
 
-        CommonManager.SQLExec("update Login_Login set ExtraField3+=',"+resutl+@"' where LoginID="+loginID);
+        CommonManager.SQLExec("update Login_Login set ExtraField3+='," + resutl + @"' where LoginID=" + loginID);
 
         Response.Redirect("AdminPropertyDisplay.aspx");
     }
