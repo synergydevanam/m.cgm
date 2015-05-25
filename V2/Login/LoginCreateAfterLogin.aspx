@@ -13,32 +13,17 @@
     <div class="tableCss">
         <h1>
             Add / Update User</h1>
-        <table>
+        <table border='1' cellpadding='5' cellspacing='0'>
            <tr>
                 <td valign="top">
                     <table>
                         
                         <tr>
                             <td>
-                                <asp:CompareValidator ID="CompareValidator1" runat="server" ValidationGroup="CreateUserWizard1"
-                                    Style="width: 100%; text-align: center;" ErrorMessage="Password and Confrim Password Does not match"
-                                    ControlToCompare="txtPassword" ControlToValidate="txtPasswordConfirm"></asp:CompareValidator>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" Style="width: 100%;
-                                    text-align: center;" runat="server" ControlToValidate="txtEmail" ErrorMessage="Not a Valid Email Address"
-                                    SetFocusOnError="True" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
-                                    ValidationGroup="CreateUserWizard1"></asp:RegularExpressionValidator>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
                                 <table border="0" cellpadding="10" cellspacing="5">
                                 <tr>
                                     <td>
-                                        Role
+                                       <b>Role</b>
                                     </td>
                                 </tr>
                                     <tr>
@@ -52,7 +37,7 @@
                                     </tr>
                                     <tr>
                                     <td>
-                                        Property
+                                        <b>Property</b>
                                     </td>
                                 </tr>
                                     <tr>
@@ -162,6 +147,10 @@
                             <td>
                                 <asp:TextBox ID="txtPasswordConfirm" TextMode="Password" runat="server" Text="">
                     </asp:TextBox>
+                    <asp:CompareValidator ID="CompareValidator1" runat="server" ValidationGroup="CreateUserWizard1"
+                                    Style="width: 100%; text-align: center;" ErrorMessage="Password and Confrim Password Does not match"
+                                    ControlToCompare="txtPassword" ControlToValidate="txtPasswordConfirm"></asp:CompareValidator>
+                            
                             </td>
                         </tr>
                         <tr>
@@ -172,6 +161,10 @@
                             <td>
                                 <asp:TextBox ID="txtEmail" runat="server" Text="">
                     </asp:TextBox>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" Style="width: 100%;
+                                    text-align: center;" runat="server" ControlToValidate="txtEmail" ErrorMessage="Not a Valid Email Address"
+                                    SetFocusOnError="True" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                    ValidationGroup="CreateUserWizard1"></asp:RegularExpressionValidator>
                             </td>
                         </tr>
                         
