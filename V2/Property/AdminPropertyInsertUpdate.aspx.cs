@@ -97,7 +97,7 @@ public partial class AdminPropertyInsertUpdate : System.Web.UI.Page
         tempProperty.ExtraField9 = txtExtraField9.Text;
         tempProperty.ExtraField10 = txtExtraField10.Text;
         bool result = PropertyManager.UpdateProperty(tempProperty);
-        common
+        
 
         Response.Redirect("AdminPropertyDisplay.aspx");
     }
