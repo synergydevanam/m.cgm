@@ -43,6 +43,8 @@ public partial class AdminPropertyInsertUpdate : System.Web.UI.Page
     }
     protected void btnAdd_Click(object sender, EventArgs e)
     {
+        if (Session["Login"] == null) { Session["PreviousPage"] = HttpContext.Current.Request.Url.AbsoluteUri; Response.Redirect("../LoginPage.aspx"); }
+        int loginID = ((Login)Session["Login"]).LoginID;
         string companyID = ddlCompnay.SelectedValue;
         if (txtCompany.Text.Trim() != "")
         {
@@ -67,6 +69,9 @@ public partial class AdminPropertyInsertUpdate : System.Web.UI.Page
         property.ExtraField9 = txtExtraField9.Text;
         property.ExtraField10 = txtExtraField10.Text;
         int resutl = PropertyManager.InsertProperty(property);
+
+        CommonManager.SQLExec("update Login_Login set ExtraField3+=',"+resutl+@"' where LoginID="+loginID);
+
         Response.Redirect("AdminPropertyDisplay.aspx");
     }
     protected void btnUpdate_Click(object sender, EventArgs e)
@@ -92,6 +97,8 @@ public partial class AdminPropertyInsertUpdate : System.Web.UI.Page
         tempProperty.ExtraField9 = txtExtraField9.Text;
         tempProperty.ExtraField10 = txtExtraField10.Text;
         bool result = PropertyManager.UpdateProperty(tempProperty);
+        common
+
         Response.Redirect("AdminPropertyDisplay.aspx");
     }
     protected void btnClear_Click(object sender, EventArgs e)
