@@ -24,7 +24,7 @@
         <asp:TextBox ID="txtHomePhone" runat="server"  placeholder="Home Phone" ></asp:TextBox>
         <asp:TextBox ID="txtWorkPhone" runat="server"  placeholder="Work Phone" ></asp:TextBox>
         <asp:TextBox ID="txtDetails" runat="server"  placeholder="Address" ></asp:TextBox>
-                <asp:Button runat="server" CssClass="btnLogin" Text="Step 2" OnClick="btnAdd_Click" />
+                <asp:Button runat="server" CssClass="btnLogin" Text="Save" OnClick="btnAdd_Click" />
             <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
 		
 		</div>

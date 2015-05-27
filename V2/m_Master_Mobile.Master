@@ -30,8 +30,8 @@
 	<div id="Footer">
         <div id = "contacthome">
 	        <%--<a style = "color:white;" href="login.aspx"><b>Login</b></a>  &nbsp; &nbsp; <a style = "color:white;" class="full-site" href="registration.aspx"><b>Register</b></a>--%> 
-		    <p>If you have questions or would like additional information about CAREGIVER MAX.COM, please fill out the form and click the "Submit" button. Your comments will be emailed directly to us. We will respond as quickly as possible. Your information is secured with us.<br/>You can also email us : <br/>
-		    <a href = "mailto:info@caregivermax.com">info@caregivermax.com</a></p>
+		    <p>If you have question about this solution or any other concern email us: <a href = "mailto:info@caregivermax.com">info@caregivermax.com</a>.
+		    </p>
 		</div>
 	</div>
    </form> 

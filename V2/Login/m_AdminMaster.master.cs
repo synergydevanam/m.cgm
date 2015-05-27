@@ -33,14 +33,13 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() == "6"
                 || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() == "28"
                 || dsMenu.Tables[0].Rows[i]["MenuID"].ToString() == "29"
-
                 )
             {
                 if (lastModule == "")
                 {
                     lastModule = dsMenu.Tables[0].Rows[i]["ModuleName"].ToString();
                     //lblMenu.Text += "<li><a href='../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString() + "' class='menulink' >" + lastModule + "</a>";
-                    ddlMenu.Items.Add(new ListItem(lastModule, "../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString()));
+                    ddlMenu.Items.Add(new ListItem(lastModule, dsMenu.Tables[0].Rows[i]["MenuID"].ToString() +"@../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString()));
                     if (dsMenu.Tables[0].Rows.Count == 1) //when the single module with no summenu
                     {
                         //lblMenu.Text += "</li></ul>";
@@ -74,7 +73,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
                     lastModule = dsMenu.Tables[0].Rows[i]["ModuleName"].ToString();
                     //lblMenu.Text += "<li><a href='../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString() + "' class='menulink' >" + lastModule + "</a>";
-                    ddlMenu.Items.Add(new ListItem(lastModule, "../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString()));
+                    ddlMenu.Items.Add(new ListItem(lastModule, dsMenu.Tables[0].Rows[i]["MenuID"].ToString() + "@../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["DefaultURL"].ToString()));
 
                     if ((i == (dsMenu.Tables[0].Rows.Count - 1)) && dsMenu.Tables[0].Rows[i]["ModuleName"].ToString() != dsMenu.Tables[0].Rows[i - 1]["ModuleName"].ToString()) // when last module has no sub menu
                     {
@@ -118,7 +117,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
                             }
 
                             //lblMenu.Text += "<li class='topline'><a href='" + "../" + drSubMenu["FolderName"].ToString() + "/" + drSubMenu["PageURL"].ToString() + "' >" + drSubMenu["MenuTitle"].ToString() + "</a></li>";
-                            ddlMenu.Items.Add(new ListItem("--" + drSubMenu["MenuTitle"].ToString(), "../" + drSubMenu["FolderName"].ToString() + "/" + drSubMenu["PageURL"].ToString()));
+                            ddlMenu.Items.Add(new ListItem("----" + drSubMenu["MenuTitle"].ToString(), "../" + drSubMenu["FolderName"].ToString() + "/" + drSubMenu["PageURL"].ToString()));
 
                             drSubMenu["Usered"] = "Yes";
                             //lblMenu.Text += "";
@@ -127,7 +126,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
                     if (count == 0)
                     {
-                        ddlMenu.Items.Add(new ListItem("--" + dsMenu.Tables[0].Rows[i]["MenuTitle"].ToString(), "../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["PageURL"].ToString()));
+                        ddlMenu.Items.Add(new ListItem("--" + dsMenu.Tables[0].Rows[i]["MenuTitle"].ToString(),dsMenu.Tables[0].Rows[i]["MenuID"].ToString() +"@../" + dsMenu.Tables[0].Rows[i]["FolderName"].ToString() + "/" + dsMenu.Tables[0].Rows[i]["PageURL"].ToString()));
                         //lblMenu.Text += ">" + dsMenu.Tables[0].Rows[i]["MenuTitle"].ToString() + "</a></li>";
                     }
                     else
@@ -201,6 +200,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
     }
     protected void ddlMenu_SelectedIndexChanged(object sender, EventArgs e)
     {
-        Response.Redirect(ddlMenu.SelectedValue);
+        Response.Redirect(ddlMenu.SelectedValue.Split('@')[1]);
     }
 }

@@ -20,7 +20,7 @@
     <div id="loginBox">
             <table class="tblReg">
             <tr>
-                    <td>N0. of Resident($1.00/Resident)
+                    <td>No. of Resident(s)
                        </td>
                 </tr>
                 <tr>
@@ -37,7 +37,7 @@
                         </td>
                 </tr>
                 <tr>
-                    <td>Discount(for TORCH Member)
+                    <td>Discount(If TORCH Member)
                        </td>
                 </tr>
                  <tr>
@@ -93,7 +93,7 @@
                         </td>
                 </tr>
                 <tr>
-                    <td>CSC 
+                    <td><%--CSC--%> Security Code
                     <%--For American Express, it's the four digits on the front of the card.
 For MasterCard, Visa or Discover, it's the last three digits in the signature area on the back of your card.--%>
                        </td>

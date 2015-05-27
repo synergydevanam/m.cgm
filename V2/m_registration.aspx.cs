@@ -74,6 +74,8 @@ public partial class Default2 : System.Web.UI.Page
            ,GETDATE()--<ModifyDate, datetime,>
            ,'1'--<ModifyBy, nvarchar(256),>
             );";
+
+        CommonManager.SQLExec(sql);
         lblMsg.Text = "Added Successfully<br/>";
         lblMsg.ForeColor = System.Drawing.Color.Green;
         //Response.Redirect("AdminLoginDisplay.aspx");

@@ -69,9 +69,14 @@ public partial class AdminPropertyInsertUpdate : System.Web.UI.Page
         property.ExtraField9 = txtExtraField9.Text;
         property.ExtraField10 = txtExtraField10.Text;
         int resutl = PropertyManager.InsertProperty(property);
-
-        CommonManager.SQLExec("update Login_Login set ExtraField3+='," + resutl + @"' where LoginID=" + loginID);
-
+        
+        Login log = (Login)Session["Login"];
+        CommonManager.SQLExec("update Login_Login set ExtraField3='"+(log.ExtraField3.Trim()==""?"":",") + resutl + @"' where LoginID=" + loginID);
+        Login login = LoginManager.GetLoginByLoginName(((Login)Session["Login"]).LoginName.ToString());
+        if (login != null)
+        {
+            Session["Login"] = login;
+        }
         Response.Redirect("AdminPropertyDisplay.aspx");
     }
     protected void btnUpdate_Click(object sender, EventArgs e)
