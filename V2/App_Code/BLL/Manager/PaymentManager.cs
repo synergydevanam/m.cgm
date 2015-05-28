@@ -32,9 +32,9 @@ public class PaymentManager
            HttpContext.Current.Request.Url.PathAndQuery, "") + HttpContext.Current.Request.ApplicationPath;
         if (!baseUrl.EndsWith("/"))
             baseUrl += "/";
-        string notifyUrl = HttpUtility.UrlEncode(baseUrl + "PayPal/Notify.aspx");
-        string returnUrl = HttpUtility.UrlEncode(baseUrl + "PayPal/OrderCompleted.aspx?ID=" + loginID.ToString());
-        string cancelUrl = HttpUtility.UrlEncode(baseUrl + "PayPal/OrderCancelled.aspx");
+        string notifyUrl = HttpUtility.UrlEncode(baseUrl + "PayPal/Default.aspx?Notification=1");
+        string returnUrl = HttpUtility.UrlEncode(baseUrl + "PayPal/Default.aspx?orderSuccessfull=1&ID=" + loginID.ToString());
+        string cancelUrl = HttpUtility.UrlEncode(baseUrl + "PayPal/Default.aspx?orderCencel=1");
 
         string business = HttpUtility.UrlEncode("rc@caregivermax.com");
         string itemName = HttpUtility.UrlEncode("Order #" + loginID.ToString());
