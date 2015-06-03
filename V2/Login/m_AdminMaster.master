@@ -38,7 +38,7 @@
 	</div>
 	<div id="Footer">
         <div id = "contacthome">
-	        <p>If you have question about this solution or any other concern email us: <a href = "mailto:info@caregivermax.com">info@caregivermax.com</a>.
+	        <p>If you have question about this solution or any other concern email us: <a style="color:White;" href = "mailto:info@caregivermax.com">info@caregivermax.com</a>.
 		    </p>
 		</div>
 	</div>

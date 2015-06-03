@@ -99,7 +99,7 @@
                     </asp:TextBox>
                             </td>
                         </tr>
-                        <tr>
+                        <tr style="display:none;">
                             <td>
                                 <asp:Label ID="lblLoginName" runat="server" Text="LoginName: ">
                     </asp:Label>

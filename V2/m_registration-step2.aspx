@@ -49,14 +49,14 @@
                        </td>
                 </tr>
                 <tr>
-                    <td><asp:TextBox ID="txtTotalAmount" runat="server" Enabled="false" Width="100%"></asp:TextBox>
+                    <td><asp:TextBox ID="txtTotalAmount" runat="server" Enabled="false" Width="100%" Font-Bold="true"></asp:TextBox>
                         </td>
                 </tr>
-                <tr>
+                <tr style="display:none;">
                     <td>Card Type
                        </td>
                 </tr>
-                <tr>
+                <tr style="display:none;">
                     <td>
                         <asp:DropDownList ID="ddlCardType" runat="server">
                             <asp:ListItem Value="MasterCard">MasterCard</asp:ListItem>
@@ -66,39 +66,39 @@
                         </asp:DropDownList>
                         </td>
                 </tr>
-                <tr>
+                <tr style="display:none;">
                     <td>Name on Card
                        </td>
                 </tr>
-                <tr>
+                <tr style="display:none;">
                     <td>
                         <asp:TextBox ID="txtCardHolderName"   runat="server"></asp:TextBox>
                         </td>
                 </tr>
-                <tr>
+                <tr style="display:none;">
                     <td>Card No.
                        </td>
                 </tr>
-                <tr>
+                <tr style="display:none;">
                     <td>
                         <asp:TextBox ID="txtCardNO"  runat="server"  ></asp:TextBox>
                         </td>
                 </tr>
-                <tr>
+                <tr style="display:none;">
                     <td>Expire Date</td>
                 </tr>
-                <tr>
+                <tr style="display:none;">
                     <td>
                         <asp:TextBox ID="txtExpireDate"  runat="server" placeholder="MM/yyyy" ></asp:TextBox>
                         </td>
                 </tr>
-                <tr>
+                <tr style="display:none;">
                     <td><%--CSC--%> Security Code
                     <%--For American Express, it's the four digits on the front of the card.
 For MasterCard, Visa or Discover, it's the last three digits in the signature area on the back of your card.--%>
                        </td>
                 </tr>
-                <tr>
+                <tr style="display:none;">
                     <td>
                         <asp:TextBox ID="txtCSC"  runat="server"  ></asp:TextBox>
                         </td>

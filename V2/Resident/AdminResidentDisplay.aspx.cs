@@ -114,12 +114,12 @@ public partial class AdminResidentDisplay : System.Web.UI.Page
             html2 += @"<div class='res' id='res"+dr["ResidentID"].ToString()+ @"'>
 			<table class='tblOfButtons'  cellpadding='10'>
 			" + "<tr><td><div class='btnRes'><a  style='text-align:centre;' href =\"javascript:back('res" + dr["ResidentID"].ToString() + "', 'TblDashBoard')\"><< Back</a></div></td></tr>" + @"
-            <tr><td><div class='btnRes'><a href ='ADLRecord.aspx?ResidentID=" + dr["ResidentID"].ToString() + @"'>ADL Record</a></div></td></tr>
-			<tr><td><div class='btnRes'><a href ='AssessmentnCare.aspx?ResidentID=" + dr["ResidentID"].ToString() + @"'>Comprehensive Assessment</a></div></td></tr>
-			<tr><td><div class='btnRes'><a href ='ServiceCarePlanAssessment.aspx?ResidentID=" + dr["ResidentID"].ToString() + @"'>Service Care & Assessment</a></div></td></tr>
+            <tr><td><div class='btnRes'><a href ='ADLRecord.aspx?ResidentID=" + dr["ResidentID"].ToString() + @"'>ADL</a></div></td></tr>
 			<tr><td><div class='btnRes'><a href ='Medicaiton_MonthlyMedicaionAdministrationRecord.aspx?residentID=" + dr["ResidentID"].ToString() + @"'>Medicaiton</a></div></td></tr>
 			<tr><td><div class='btnRes'><a href ='ObservationNote.aspx?residentID=" + dr["ResidentID"].ToString() + @"'>Observation Log</a></div></td></tr>
-			<tr><td><div class='btnRes'><a href ='DoctorsOrder.aspx?residentID=" + dr["ResidentID"].ToString() + @"'>Doctor's Order</a></div></td></tr>
+			<tr><td><div class='btnRes'><a href ='AssessmentnCare.aspx?ResidentID=" + dr["ResidentID"].ToString() + @"'>Compr. Assmt (Desktop)</a></div></td></tr>
+			<tr><td><div class='btnRes'><a href ='ServiceCarePlanAssessment.aspx?ResidentID=" + dr["ResidentID"].ToString() + @"'>Svc.Care Assmt (Desktop)</a></div></td></tr>
+			<tr><td><div class='btnRes'><a href ='DoctorsOrder.aspx?residentID=" + dr["ResidentID"].ToString() + @"'>Doctors Order (Desktop)</a></div></td></tr>
 			" + "<tr><td><div class='btnRes'><a  style='text-align:centre;' href =\"javascript:back('res" + dr["ResidentID"].ToString() + "', 'TblDashBoard')\"><< Back</a></div></td></tr>" + @"
 			</table>
 			</div>";

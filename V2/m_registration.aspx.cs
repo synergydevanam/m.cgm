@@ -73,13 +73,16 @@ public partial class Default2 : System.Web.UI.Page
            ,'1'--<AddedBy, nvarchar(256),>
            ,GETDATE()--<ModifyDate, datetime,>
            ,'1'--<ModifyBy, nvarchar(256),>
-            );";
+            );
+update Login_Login set AddedResident=0, RootUser=" + resutl + " where LoginID=" + resutl;
 
         CommonManager.SQLExec(sql);
         lblMsg.Text = "Added Successfully<br/>";
         lblMsg.ForeColor = System.Drawing.Color.Green;
         //Response.Redirect("AdminLoginDisplay.aspx");
-
+        Sendmail.sendEmail(txtEmail.Text, txtFirstName.Text + " " + txtLastName.Text, "info@caregivermax.com", "anamuliut@gmail.com", "New user registered", "A new user registered for Care Giver Solution.");
+        Sendmail.sendEmail("info@caregivermax.com", "Care Giver Max", txtEmail.Text, "anamuliut@gmail.com", "Signup at www.caregivermax.com", "Thank you for your interest and signing up with Care Giver max. We look forward to work with you");
+        
         Response.Redirect("m_registration-step2.aspx?LoginID=" + resutl);
     }
 }

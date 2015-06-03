@@ -537,17 +537,14 @@ CodeFile="AdminResidentInsertUpdate.aspx.cs" Inherits="AdminResidentInsertUpdate
                 <tr>
                     <td>
                         <p>
-                            Document Upload</p>
+                            Document Upload<%--</p>
                     </td>
                     <td style="float: right; padding-right: 8px;">
-                        <p>
+                        <p>--%>
+                        (Choose file first then click Add)
                             <asp:Label ID="Label1" runat="server" ForeColor="Green" Text="Update Successfully"
                                 Visible="false"></asp:Label>
-                            <asp:Button ID="Button1" runat="server" Text="Add" OnClick="btnUpload_Click" class="add_btn" />
-                            <asp:Button ID="Button2" runat="server" Text="Update" class="add_btn" Visible="false"
-                                OnClick="btnUpload_Click" />
-                            <asp:Button ID="Button4" runat="server" Text="Clear" class="add_btn" Visible="false"
-                                OnClick="btnClear_Click" />
+                            
                         </p>
                     </td>
                 </tr>
@@ -570,6 +567,15 @@ CodeFile="AdminResidentInsertUpdate.aspx.cs" Inherits="AdminResidentInsertUpdate
                                 <asp:TextBox ID="txDocumentDetails" runat="server" Text=""></asp:TextBox>
                             </li>
                         </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <asp:Button ID="Button1" runat="server" Text="Add" OnClick="btnUpload_Click" class="add_btn" />
+                            <asp:Button ID="Button2" runat="server" Text="Update" class="add_btn" Visible="false"
+                                OnClick="btnUpload_Click" />
+                            <asp:Button ID="Button4" runat="server" Text="Clear" class="add_btn" Visible="false"
+                                OnClick="btnClear_Click" />
                     </td>
                 </tr>
                 <tr>

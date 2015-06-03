@@ -140,11 +140,12 @@ public partial class AdminLoginInsertUpdate : System.Web.UI.Page
 
     private void loadPropertyGrid()
     {
-        dlProperty.DataSource = PropertyManager.GetAllPropertiesSearch("Where AL_Property.ExtraField7 <> 'InActive'");
+        dlProperty.DataSource = PropertyManager.GetAllPropertiesSearch("Where AL_Property.PropertyID in (0" + getLogin().ExtraField3 + ")");
         dlProperty.DataBind();
     }
     protected void btnAdd_Click(object sender, EventArgs e)
     {
+        txtLoginName.Text = txtEmail.Text;
         string loginID = "1";
         try
         {
@@ -179,9 +180,9 @@ public partial class AdminLoginInsertUpdate : System.Web.UI.Page
         login.HomePhone = txtHomePhone.Text;
         login.WorkPhone = txtWorkPhone.Text;
         login.RowStatusID = Int32.Parse(ddlRowStatus.SelectedValue);
-        login.AddedBy = loginID;
+        login.AddedBy = getLogin().LoginID.ToString();
         login.AddedDate = DateTime.Now;
-        login.UpdatedBy = loginID;
+        login.UpdatedBy = getLogin().LoginID.ToString();
         login.UpdatedDate = DateTime.Now;
         login.Details = txtDetails.Text;
         login.ExtraField1 = getSelectedRoleIds();
@@ -195,6 +196,7 @@ public partial class AdminLoginInsertUpdate : System.Web.UI.Page
         login.ExtraField9 = "";
         login.ExtraField10 = "";
         int resutl = LoginManager.InsertLogin(login);
+        CommonManager.SQLExec("update Login_Login set  RootUser=(select RootUser from Login_Login where LoginID="+getLogin().LoginID+") where LoginID="+resutl);
 
         lblMsg.Text = "Added Successfully<br/>";
         lblMsg.ForeColor = System.Drawing.Color.Green;
@@ -202,6 +204,7 @@ public partial class AdminLoginInsertUpdate : System.Web.UI.Page
     }
     protected void btnUpdate_Click(object sender, EventArgs e)
     {
+        txtLoginName.Text = txtEmail.Text;
         string loginID = "1";
         try
         {
